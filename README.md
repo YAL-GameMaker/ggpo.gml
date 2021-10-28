@@ -1,6 +1,56 @@
-![](doc/images/ggpo_header.png)
+# GGPO.gml
 
-&nbsp; _[![Appveyor build status](https://img.shields.io/appveyor/ci/pond3r/ggpo/master.svg?logo=appveyor)](https://ci.appveyor.com/project/pond3r/ggpo/branch/master)_
+Experimental GameMaker bindings for [GGPO](https://github.com/pond3r/ggpo) using variously unusual tricks.  
+Pretty much juggling loaded guns.
+
+## Documentation
+
+Everything is named same as in GGPO C API, except for player functions (which have separate `ggpo_add_local_player` and `ggpo_add_remote_player`) and callback variables.
+
+Check out the sample project for general use!
+
+You can also use "Show extension API" in GMEdit (when right-clicking an extension) to get a full list of functions.
+
+## Building
+
+See [GMSDLL](https://github.com/YAL-GameMaker/GMSDLL) for initial setup;  
+Note that you'll have to build the VS solution or download the release - repository does not include pre-built binaries.
+
+## Test project
+
+Currently a very simple project with a couple spaceships zipping around.
+You can also press Space to warp, which triggers a misprediction (hint: for presses, store and compare against previous button state)
+
+## Caveats
+
+- Probably not production ready and may never be truly production ready.
+- Volatile - e.g. if you pass a _completely empty_ script to one of GGPO callbacks, the _next_ callback will hard crash your game.
+- GMS2.3+ only. _Might_ be possible to make work with specific versions of GMS1.4 with other exotic tricks.
+- Windows-only because I need to pick a fork to borrow Unix-specific code from.
+- Uses GGPO's WinSock implementation instead of GameMaker sockets.
+- Due to GGPO's API specifics (players have to be initialized immediately), you'll generally have to write a lobby system on top of GGPO.
+- Doesn't include any serialization helpers - you'll have to figure out optimal saving/loading yourself.
+
+## Is this used in Rivals of Aether?
+
+\[...as if that wasn't apparent from first public builds having broken time sync]  
+Work projects use Haxe-based deterministic netcode implementations compiled to target language (with [sfgml](https://github.com/YAL-Haxe/sfgml) used for targeting GML) to avoid interop issues.
+
+It'd be pretty neat to write a straight Haxe port of GGPO (which would have made it easier to integrate with many languages), but that's a whole lot of work.
+
+As for pure-GML implementations, there's [Platform Fighter Engine](https://springrollgames.itch.io/platform-fighter-engine).
+
+## Does this mean that every GameMaker game can now have rollback netcode?
+
+Absolutely not. In fact, the amount of refactoring required to detach your gameplay logic from GameMaker loop, make everything deterministic, and implement fast state \[de-]serialization makes this completely unaffordable to most games.
+
+Original README follows:
+
+---
+
+# GGPO
+
+![](doc/images/ggpo_header.png)
 
 (日本語ドキュメントは[こちら](README.ja.md))
 

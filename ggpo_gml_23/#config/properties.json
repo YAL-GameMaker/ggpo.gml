@@ -1,0 +1,11 @@
+{
+    "builderSettings": {
+        "forkArguments": "-fork"
+    },
+    "linterPrefs": {
+        "requireFields": true,
+        "specTypeInst": true,
+        "specTypeInstSubTopLevel": true,
+        "specTypeVar": true
+    }
+}

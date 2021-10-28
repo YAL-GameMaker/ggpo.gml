@@ -1,0 +1,7 @@
+```set template default.html```
+```set title ggpo_gml cheat sheet```
+```set autoapi ext```
+```set intro
+This is a "cheat sheet" for "ggpo_gml" extension by YellowAfterlife.
+The extension can be found on [itch.io](https://yellowafterlife.itch.io/gamemaker-ggpo_gml).
+```

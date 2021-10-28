@@ -1,0 +1,190 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Build scripts">
+      <UniqueIdentifier>{9a9fbe1a-e106-412a-839c-4a270587c3d1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\GGPO">
+      <UniqueIdentifier>{9dae0618-07e9-4dfa-ae7f-1400acf0d6e0}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="stdafx.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="targetver.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="resource1.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="gml_ext.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\lib\ggpo\backends\backend.h">
+      <Filter>Source Files\GGPO</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\lib\ggpo\backends\p2p.h">
+      <Filter>Source Files\GGPO</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\lib\ggpo\backends\spectator.h">
+      <Filter>Source Files\GGPO</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\lib\ggpo\backends\synctest.h">
+      <Filter>Source Files\GGPO</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\lib\ggpo\bitvector.h">
+      <Filter>Source Files\GGPO</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\lib\ggpo\game_input.h">
+      <Filter>Source Files\GGPO</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\lib\ggpo\input_queue.h">
+      <Filter>Source Files\GGPO</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\lib\ggpo\log.h">
+      <Filter>Source Files\GGPO</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\lib\ggpo\network\udp.h">
+      <Filter>Source Files\GGPO</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\lib\ggpo\network\udp_msg.h">
+      <Filter>Source Files\GGPO</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\lib\ggpo\network\udp_proto.h">
+      <Filter>Source Files\GGPO</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\lib\ggpo\platform_windows.h">
+      <Filter>Source Files\GGPO</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\lib\ggpo\poll.h">
+      <Filter>Source Files\GGPO</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\lib\ggpo\ring_buffer.h">
+      <Filter>Source Files\GGPO</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\lib\ggpo\static_buffer.h">
+      <Filter>Source Files\GGPO</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\lib\ggpo\sync.h">
+      <Filter>Source Files\GGPO</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\lib\ggpo\timesync.h">
+      <Filter>Source Files\GGPO</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\lib\ggpo\types.h">
+      <Filter>Source Files\GGPO</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\lib\ggpo\zconf.h">
+      <Filter>Source Files\GGPO</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\lib\ggpo\zlib.h">
+      <Filter>Source Files\GGPO</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\include\ggponet.h">
+      <Filter>Source Files\GGPO</Filter>
+    </ClInclude>
+    <ClInclude Include="script_execute.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ggpo_scripts.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ggpo_gml.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="dllmain.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="autogen.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\lib\ggpo\backends\p2p.cpp">
+      <Filter>Source Files\GGPO</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\lib\ggpo\backends\spectator.cpp">
+      <Filter>Source Files\GGPO</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\lib\ggpo\backends\synctest.cpp">
+      <Filter>Source Files\GGPO</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\lib\ggpo\bitvector.cpp">
+      <Filter>Source Files\GGPO</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\lib\ggpo\game_input.cpp">
+      <Filter>Source Files\GGPO</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\lib\ggpo\input_queue.cpp">
+      <Filter>Source Files\GGPO</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\lib\ggpo\log.cpp">
+      <Filter>Source Files\GGPO</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\lib\ggpo\main.cpp">
+      <Filter>Source Files\GGPO</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\lib\ggpo\network\udp.cpp">
+      <Filter>Source Files\GGPO</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\lib\ggpo\network\udp_proto.cpp">
+      <Filter>Source Files\GGPO</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\lib\ggpo\platform_windows.cpp">
+      <Filter>Source Files\GGPO</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\lib\ggpo\poll.cpp">
+      <Filter>Source Files\GGPO</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\lib\ggpo\sync.cpp">
+      <Filter>Source Files\GGPO</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\lib\ggpo\timesync.cpp">
+      <Filter>Source Files\GGPO</Filter>
+    </ClCompile>
+    <ClCompile Include="script_execute.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ggpo_callbacks.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ggpo_scripts.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ggpo_misc.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ggpo_player.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="ggpo_gml.rc">
+      <Filter>Resource Files</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="postBuild.bat">
+      <Filter>Build scripts</Filter>
+    </None>
+    <None Include="preBuild.bat">
+      <Filter>Build scripts</Filter>
+    </None>
+  </ItemGroup>
+</Project>
