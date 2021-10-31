@@ -127,6 +127,7 @@ public:
 	int m_curSlot;
 };
 class GMLClosure : public YYObjectBase {
+public:
 	void* m_callScript;
 	GMLFunc* m_cppFunc;
 	void* m_yycFunc;

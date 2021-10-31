@@ -16,7 +16,7 @@ dllx double ggpo_preinit_1(GMLClosure* _script_execute) {
 	WSADATA wd = { 0 };
 	WSAStartup(MAKEWORD(2, 2), &wd);
 	script_execute::self = _script_execute;
-	script_execute::raw = _script_execute->func;
+	script_execute::raw = _script_execute->m_cppFunc;
 	return 1;
 }
 
