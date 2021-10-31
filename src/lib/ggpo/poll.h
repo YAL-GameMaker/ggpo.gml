@@ -10,20 +10,47 @@
 
 #include "static_buffer.h"
 
+#define MAX_POLLABLE_HANDLES     64
+
+
 class IPollSink {
 public:
    virtual ~IPollSink() { }
-   virtual bool OnLoopPoll() { return true; }
+   virtual bool OnHandlePoll(void*) { return true; }
+   virtual bool OnMsgPoll(void*) { return true; }
+   virtual bool OnLoopPoll(void*) { return true; }
 };
 
 class Poll {
 public:
-   void RegisterLoop(IPollSink *sink);
+   Poll(void);
+   void RegisterMsgLoop(IPollSink* sink, void* cookie = NULL);
+   void RegisterLoop(IPollSink* sink, void* cookie = NULL);
 
-   bool Pump();
+   bool Pump(int timeout = 0);
 
 protected:
-   StaticBuffer<IPollSink*, 16> _loop_sinks;
+
+   struct PollSinkCb {
+      IPollSink* sink;
+      void* cookie;
+      PollSinkCb() : sink(NULL), cookie(NULL) { }
+      PollSinkCb(IPollSink* s, void* c) : sink(s), cookie(c) { }
+   };
+
+   struct PollPeriodicSinkCb : public PollSinkCb {
+      int         interval;
+      int         last_fired;
+      PollPeriodicSinkCb() : PollSinkCb(NULL, NULL), interval(0), last_fired(0) { }
+      PollPeriodicSinkCb(IPollSink* s, void* c, int i) :
+         PollSinkCb(s, c), interval(i), last_fired(0) { }
+   };
+
+   int               _start_time;
+
+   StaticBuffer<PollSinkCb, 16>          _msg_sinks;
+   StaticBuffer<PollSinkCb, 16>          _loop_sinks;
+   StaticBuffer<PollPeriodicSinkCb, 16>  _periodic_sinks;
 };
 
 #endif

@@ -118,7 +118,7 @@
         {"value":"10","hidden":false,"resourceVersion":"1.0","name":"ggpo_errorcode_too_many_spectators","tags":[],"resourceType":"GMExtensionConstant",},
         {"value":"11","hidden":false,"resourceVersion":"1.0","name":"ggpo_errorcode_invalid_request","tags":[],"resourceType":"GMExtensionConstant",},
       ],"ProxyFiles":[
-        {"TargetMask":6,"resourceVersion":"1.0","name":"ggpo_gml_x64.dll","tags":[],"resourceType":"GMProxyFile",},
+        {"name":"ggpo_gml_x64.dll","tags":[],"resourceVersion":"1.0","resourceType":"GMProxyFile","TargetMask":6,},
       ],"copyToTargets":64,"order":[
         {"name":"ggpo_do_game_state_save_3_raw","path":"extensions/ggpo_gml/ggpo_gml.yy",},
         {"name":"ggpo_idle_raw","path":"extensions/ggpo_gml/ggpo_gml.yy",},
@@ -280,7 +280,9 @@
         {"externalName":"ggpo_preinit_2","kind":2,"help":"ggpo_preinit_2(fixed_buffer:buffer)->int","hidden":false,"returnType":2,"argCount":1,"args":[
             2,
           ],"resourceVersion":"1.0","name":"ggpo_preinit_2","tags":[],"resourceType":"GMExtensionFunction",},
-      ],"constants":[],"ProxyFiles":[],"copyToTargets":-1,"order":[
+      ],"constants":[
+        
+      ],"ProxyFiles":[],"copyToTargets":-1,"order":[
         {"name":"ggpo_do_game_state_save_3","path":"extensions/ggpo_gml/ggpo_gml.yy",},
         {"name":"ggpo_idle","path":"extensions/ggpo_gml/ggpo_gml.yy",},
         {"name":"ggpo_advance_frame","path":"extensions/ggpo_gml/ggpo_gml.yy",},
@@ -400,33 +402,8 @@
         {"value":"10","hidden":false,"resourceVersion":"1.0","name":"ggpo_errorcode_too_many_spectators","tags":[],"resourceType":"GMExtensionConstant",},
         {"value":"11","hidden":false,"resourceVersion":"1.0","name":"ggpo_errorcode_invalid_request","tags":[],"resourceType":"GMExtensionConstant",},
       ],"ProxyFiles":[
-        {"TargetMask":6,"resourceVersion":"1.0","name":"ggpo_gml_x64.dll","tags":[],"resourceType":"GMProxyFile",},
+        {"name":"ggpo_gml_x64.dll","tags":[],"resourceVersion":"1.0","resourceType":"GMProxyFile","TargetMask":6,},
       ],"copyToTargets":2,"order":[
-        {"name":"ggpo_do_game_state_save_3_raw","path":"extensions/ggpo_gml/ggpo_gml.yy",},
-        {"name":"ggpo_idle_raw","path":"extensions/ggpo_gml/ggpo_gml.yy",},
-        {"name":"ggpo_advance_frame_raw","path":"extensions/ggpo_gml/ggpo_gml.yy",},
-        {"name":"ggpo_player_is_active_raw","path":"extensions/ggpo_gml/ggpo_gml.yy",},
-        {"name":"ggpo_set_input_size_raw","path":"extensions/ggpo_gml/ggpo_gml.yy",},
-        {"name":"ggpo_start_session_raw","path":"extensions/ggpo_gml/ggpo_gml.yy",},
-        {"name":"ggpo_start_spectating_raw","path":"extensions/ggpo_gml/ggpo_gml.yy",},
-        {"name":"ggpo_start_synctest_raw","path":"extensions/ggpo_gml/ggpo_gml.yy",},
-        {"name":"ggpo_close_session_raw","path":"extensions/ggpo_gml/ggpo_gml.yy",},
-        {"name":"ggpo_add_local_player_raw","path":"extensions/ggpo_gml/ggpo_gml.yy",},
-        {"name":"ggpo_add_remote_player_raw","path":"extensions/ggpo_gml/ggpo_gml.yy",},
-        {"name":"ggpo_disconnect_player_raw","path":"extensions/ggpo_gml/ggpo_gml.yy",},
-        {"name":"ggpo_set_frame_delay_raw","path":"extensions/ggpo_gml/ggpo_gml.yy",},
-        {"name":"ggpo_add_local_input_raw","path":"extensions/ggpo_gml/ggpo_gml.yy",},
-        {"name":"ggpo_synchronize_input_raw","path":"extensions/ggpo_gml/ggpo_gml.yy",},
-        {"name":"ggpo_preinit_2_raw","path":"extensions/ggpo_gml/ggpo_gml.yy",},
-        {"name":"ggpo_do_network_send_packet_2","path":"extensions/ggpo_gml/ggpo_gml.yy",},
-        {"name":"ggpo_eventcode_get_name","path":"extensions/ggpo_gml/ggpo_gml.yy",},
-        {"name":"ggpo_get_last_error","path":"extensions/ggpo_gml/ggpo_gml.yy",},
-        {"name":"ggpo_preinit_1","path":"extensions/ggpo_gml/ggpo_gml.yy",},
-        {"name":"ggpo_errorcode_get_name","path":"extensions/ggpo_gml/ggpo_gml.yy",},
-        {"name":"ggpo_sleep","path":"extensions/ggpo_gml/ggpo_gml.yy",},
-        {"name":"ggpo_set_disconnect_timeout","path":"extensions/ggpo_gml/ggpo_gml.yy",},
-        {"name":"ggpo_set_disconnect_notify_start","path":"extensions/ggpo_gml/ggpo_gml.yy",},
-        {"name":"ggpo_set_game_name","path":"extensions/ggpo_gml/ggpo_gml.yy",},
         {"name":"ggpo_do_game_state_save_3_raw","path":"extensions/ggpo_gml/ggpo_gml.yy",},
         {"name":"ggpo_idle_raw","path":"extensions/ggpo_gml/ggpo_gml.yy",},
         {"name":"ggpo_advance_frame_raw","path":"extensions/ggpo_gml/ggpo_gml.yy",},
