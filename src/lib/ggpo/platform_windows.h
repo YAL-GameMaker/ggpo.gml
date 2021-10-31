@@ -8,8 +8,13 @@
 #ifndef _GGPO_WINDOWS_H_
 #define _GGPO_WINDOWS_H_
 
+#ifndef GML_SOCKETS
 #include <winsock2.h>
 #include <ws2tcpip.h>
+#else
+#define WIN32_LEAN_AND_MEAN
+#endif
+
 #include <windows.h>
 #include <timeapi.h>
 #include <stdio.h>

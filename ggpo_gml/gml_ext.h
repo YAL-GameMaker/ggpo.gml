@@ -53,6 +53,11 @@ public:
 		pos += sizeof(T);
 		return result;
 	}
+	template<class T> T* read_ref() {
+		auto result = (T*)pos;
+		pos += sizeof(T);
+		return result;
+	}
 
 	char* read_string() {
 		char* r = (char*)pos;

@@ -15,6 +15,14 @@ int gml_script_id::i(int _default) {
 	call(result, args);
 	return result.getInt32(_default);
 }
+int64_t gml_script_id::l(int64_t _default) {
+	static GMLVar result = 0;
+	static GMLVar args[] = { 0 };
+	args[0].setInt32(id);
+	call(result, args);
+	return result.getInt64(_default);
+}
+
 int gml_script_id::ii(int arg0, int _default) {
 	static GMLVar result = 0;
 	static GMLVar args[] = { 0, 0 };
@@ -31,6 +39,15 @@ int gml_script_id::li(int64_t arg0, int _default) {
 	call(result, args);
 	return result.getInt32(_default);
 }
+int64_t gml_script_id::ll(int64_t arg0, int64_t _default) {
+	static GMLVar result = 0;
+	static GMLVar args[] = { 0, 0 };
+	args[0].setInt32(id);
+	args[1].setInt64(arg0);
+	call(result, args);
+	return result.getInt64(_default);
+}
+
 int gml_script_id::lii(int64_t arg0, int arg1, int _default) {
 	static GMLVar result = 0;
 	static GMLVar args[] = { 0, 0, 0 };
@@ -39,4 +56,13 @@ int gml_script_id::lii(int64_t arg0, int arg1, int _default) {
 	args[2].setInt32(arg1);
 	call(result, args);
 	return result.getInt32(_default);
+}
+int64_t gml_script_id::lll(int64_t arg0, int64_t arg1, int64_t _default) {
+	static GMLVar result = 0;
+	static GMLVar args[] = { 0, 0, 0 };
+	args[0].setInt32(id);
+	args[1].setInt64(arg0);
+	args[2].setInt64(arg1);
+	call(result, args);
+	return result.getInt64(_default);
 }

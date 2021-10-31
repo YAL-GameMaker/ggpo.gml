@@ -44,6 +44,18 @@ typedef int int32;
 #  error Unsupported platform
 #endif
 
+#ifdef GML_SOCKETS
+#include <stdlib.h>
+#include <xutility>
+typedef unsigned long long SOCKET;
+typedef unsigned short u_short;
+#define INVALID_SOCKET (~0)
+struct sockaddr_in {
+   char ip[64];
+   int port;
+};
+#endif
+
 #include "log.h"
 
 

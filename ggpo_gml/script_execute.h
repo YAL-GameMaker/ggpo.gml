@@ -127,6 +127,7 @@ public:
 	int m_curSlot;
 };
 class GMLClosure : public YYObjectBase {
+public:
 	void* m_callScript;
 	GMLFunc* m_cppFunc;
 	void* m_yycFunc;
@@ -141,7 +142,7 @@ namespace script_execute {
 	}
 }
 // helpers are named based on arguments+return type, one char per argument and last for return
-// i=int
+// i=int, l=int64
 struct gml_script_id {
 	int id;
 	gml_script_id() : id(-1) { }
@@ -154,7 +155,12 @@ struct gml_script_id {
 	}
 
 	int i(int _default = 0);
+	int64_t l(int64_t _default = 0);
+
 	int ii(int arg0, int _default = 0);
 	int li(int64_t arg0, int _default = 0);
+	int64_t ll(int64_t arg0, int64_t _default = 0);
+
 	int lii(int64_t arg0, int arg1, int _default = 0);
+	int64_t lll(int64_t arg0, int64_t arg1, int64_t _default = 0);
 };

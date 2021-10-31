@@ -73,9 +73,14 @@ UdpProtocol::Init(Udp *udp,
    _queue = queue;
    _local_connect_status = status;
 
+   #ifdef GML_SOCKETS
+   strncpy(_peer_addr.ip, ip, std::size(_peer_addr.ip));
+   _peer_addr.port = port;
+   #else
    _peer_addr.sin_family = AF_INET;
    _peer_addr.sin_port = htons(port);
    inet_pton(AF_INET, ip, &_peer_addr.sin_addr.s_addr);
+   #endif
 
    do {
       _magic_number = (uint16)rand();
@@ -294,8 +299,13 @@ UdpProtocol::HandlesMsg(sockaddr_in &from,
    if (!_udp) {
       return false;
    }
+   #ifdef GML_SOCKETS
+   return strncpy(_peer_addr.ip, from.ip, std::size(_peer_addr.ip)) &&
+          _peer_addr.port == from.port;
+   #else
    return _peer_addr.sin_addr.S_un.S_addr == from.sin_addr.S_un.S_addr &&
           _peer_addr.sin_port == from.sin_port;
+   #endif
 }
 
 void
@@ -732,7 +742,11 @@ UdpProtocol::PumpSendQueue()
          _oo_packet.msg = entry.msg;
          _oo_packet.dest_addr = entry.dest_addr;
       } else {
+         #ifdef GML_SOCKETS
+         ASSERT(entry.dest_addr.ip[0]);
+         #else
          ASSERT(entry.dest_addr.sin_addr.s_addr);
+         #endif
 
          _udp->SendTo((char *)entry.msg, entry.msg->PacketSize(), 0,
                       (struct sockaddr *)&entry.dest_addr, sizeof entry.dest_addr);
