@@ -4,8 +4,15 @@
  * Use of this software is governed by the MIT license that can be found
  * in the LICENSE file.
  */
-
+#if _WINDOWS
 #include "platform_windows.h"
+
+BOOL WINAPI
+DllMain(HINSTANCE hinstDLL, DWORD fdwReason, LPVOID lpvReserved)
+{
+   srand(Platform::GetCurrentTimeMS() + Platform::GetProcessID());
+   return TRUE;
+}
 
 int
 Platform::GetConfigInt(const char* name)
@@ -25,3 +32,4 @@ bool Platform::GetConfigBool(const char* name)
    }
    return atoi(buf) != 0 || _stricmp(buf, "true") == 0;
 }
+#endif

@@ -42,6 +42,7 @@ global.__ggpo_do_network_receive_packet__active = false;
 global.__ggpo_do_network_receive_packet__size = false;
 global.__ggpo_default_packet_queue = ds_map_create(); /// @is {ds_map<network_socket, ds_queue<[ip:string, port:int, data:buffer, size:int]>>}
 global.__ggpo_default_packet_pool = ds_queue_create(); /// @is {ds_queue<buffer>}
+global.__ggpo_default_verbose = false;
 
 #define ggpo_default_game_state_save
 show_error("Please implement ggpo_on_game_state_save (buffer, frame)", 1);
@@ -67,16 +68,18 @@ if (_ev.code == ggpo_eventcode_timesync) {
 
 #define ggpo_default_network_create_socket
 var _bind_port = argument0, _retries = argument1;
-//show_debug_message({ func: "ggpo_default_network_create_socket", port: _bind_port, retries: _retries });
+if (global.__ggpo_default_verbose) show_debug_message({ func: "ggpo_default_network_create_socket", port: _bind_port, retries: _retries });
 for (var _port = _bind_port; _port <= _bind_port + _retries; _port++) {
     var _socket = network_create_socket_ext(network_socket_udp, _port);
+    if (global.__ggpo_default_verbose) show_debug_message("Socket OK! Port: " + string(_port));
     if (_socket >= 0) return _socket;
 }
+if (global.__ggpo_default_verbose) show_debug_message("Failed to bind a socket!");
 return -1;
 
 #define ggpo_default_network_destroy_socket
 var _socket = argument0;
-//show_debug_message({ func: "ggpo_default_network_destroy_socket", socket: _socket });
+if (global.__ggpo_default_verbose) show_debug_message({ func: "ggpo_default_network_destroy_socket", socket: _socket });
 network_destroy(_socket);
 var _queue = global.__ggpo_default_packet_queue[?_socket];
 if (_queue != undefined) {
@@ -90,7 +93,7 @@ if (_queue != undefined) {
 
 #define ggpo_default_network_send_packet
 var _socket = argument0, _url = argument1, _port = argument2, _buf = argument3, _len = argument4;
-//show_debug_message({ func: "ggpo_default_network_send_packet", socket: _socket, ip: _url, port: _port, size: _len });
+if (global.__ggpo_default_verbose) show_debug_message({ func: "ggpo_default_network_send_packet", socket: _socket, ip: _url, port: _port, size: _len });
 return network_send_udp(_socket, _url, _port, _buf, _len);
 
 #define ggpo_default_network_receive_packet
@@ -99,6 +102,7 @@ var _queue = global.__ggpo_default_packet_queue[?_socket];
 if (_queue == undefined || ds_queue_empty(_queue)) return -1;
 //trace("recv", _socket, _queue, _queue != undefined ? ds_queue_size(_queue) : -1)
 var _packet = ds_queue_dequeue(_queue);
+if (global.__ggpo_default_verbose) show_debug_message({ func: "ggpo_default_network_receive_packet", ip: _packet[0], port: _packet[1], size: _packet[3] });
 ggpo_network_packet_receive(_packet[0], _packet[1], _packet[2], _packet[3]);
 ds_queue_enqueue(global.__ggpo_default_packet_pool, _packet[2]); // GML isn't multi-threaded so no one's going to write anything to this before we return
 
@@ -120,7 +124,7 @@ if (ds_queue_empty(global.__ggpo_default_packet_pool)) {
     if (buffer_get_size(_buf) < _size) buffer_resize(_buf, _size);
 }
 buffer_copy(_e[?"buffer"], 0, _size, _buf, 0);
-//show_debug_message({ queue: _queue, func: "ggpo_default_async_network", socket: _socket, ip: _e[?"ip"], port: _e[?"port"], size: _size });
+if (global.__ggpo_default_verbose) show_debug_message({ queue: _queue, func: "ggpo_default_async_network", socket: _socket, ip: _e[?"ip"], port: _e[?"port"], size: _size });
 ds_queue_enqueue(_queue, [_e[?"ip"], _e[?"port"], _buf, _size]);
 
 #define ggpo_do_game_state_save_2

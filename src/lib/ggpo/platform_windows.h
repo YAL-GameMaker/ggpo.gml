@@ -28,8 +28,11 @@ public:  // functions
    static ProcessID GetProcessID() { return GetCurrentProcessId(); }
    static void AssertFailed(char *msg) { MessageBoxA(NULL, msg, "GGPO Assertion Failed", MB_OK | MB_ICONEXCLAMATION); }
    static uint32 GetCurrentTimeMS() { return timeGetTime(); }
+   static void SleepMS(int ms) { Sleep(ms); }
    static int GetConfigInt(const char* name);
    static bool GetConfigBool(const char* name);
+   static void CreateDirectory(const char* pathname) { ::CreateDirectoryA(pathname, NULL); }
+   static void DebugBreak() { ::DebugBreak(); }
 };
 
 #endif

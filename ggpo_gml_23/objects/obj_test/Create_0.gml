@@ -1,4 +1,7 @@
-var _fork = parameter_string(parameter_count() - 1) == "-fork";
+var _fork = global.__test_mode
+if (_fork == undefined) _fork = parameter_string(parameter_count() - 1) == "-fork";
+
+global.__ggpo_default_verbose = true;
 window_set_caption("ggpo " + (_fork ? "client" : "server"))
 //show_message("?" + string(_fork));
 #macro ggpo_input_size 8

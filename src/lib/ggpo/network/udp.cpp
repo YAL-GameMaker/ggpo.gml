@@ -83,8 +83,8 @@ Udp::SendTo(char *buffer, int len, int flags, struct sockaddr *dst, int destlen)
    struct sockaddr_in *to = (struct sockaddr_in *)dst;
 
    #ifdef GML_SOCKETS
-   static_assert(sizeof sockaddr_in <= ggpo_fixed_buffer_size);
-   memcpy(ggpo_fixed_buffer, dst, sizeof sockaddr_in);
+   static_assert(sizeof(sockaddr_in) <= ggpo_fixed_buffer_size);
+   memcpy(ggpo_fixed_buffer, dst, sizeof(sockaddr_in));
    ggpo_do_network_send_packet_data = buffer;
    scripts.ggpo_do_network_send_packet_1.lll(_socket, len, -1);
    #else
@@ -149,7 +149,7 @@ Udp::Log(const char *fmt, ...)
    size_t offset;
    va_list args;
 
-   strcpy_s(buf, "udp | ");
+   strcpy(buf, "udp | ");
    offset = strlen(buf);
    va_start(args, fmt);
    vsnprintf(buf + offset, ARRAY_SIZE(buf) - offset - 1, fmt, args);

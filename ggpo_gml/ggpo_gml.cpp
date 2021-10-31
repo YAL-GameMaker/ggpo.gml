@@ -5,6 +5,9 @@
 //#include "ggponet.h"
 #include "ggpo_scripts.h"
 
+#include <chrono>
+#include <thread>
+
 GGPOSession* ggpo = nullptr;
 GGPOErrorCode ggpoLastError = GGPO_OK;
 /// ->ggpo_errorcode
@@ -60,7 +63,7 @@ dllx const char* ggpo_errorcode_get_name(double errorcode) {
 }
 
 dllx double ggpo_sleep(double amt) {
-	Sleep((DWORD)amt);
+	std::this_thread::sleep_for(std::chrono::milliseconds((int)amt));
 	return true;
 }
 

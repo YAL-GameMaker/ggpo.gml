@@ -22,9 +22,10 @@ using namespace std;
 #ifdef _WINDEF_
 /// auto-generates a window_handle() on GML side
 typedef HWND GAME_HWND;
+#endif
+
 /// auto-generates an asset_get_index(argument_name) on GML side
 typedef int gml_asset_index_of;
-#endif
 
 struct gml_buffer {
 private:
