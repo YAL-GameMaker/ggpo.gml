@@ -10,4 +10,4 @@ g++ -m64\
   -DGML_SOCKETS \
   -Isrc/include \
   -Isrc/lib/ggpo \
-  -shared -o ggpo_gml.dylib
+  -shared -o ggpo_gml_23/extensions/ggpo_gml/ggpo_gml.dylib
