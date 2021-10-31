@@ -23,19 +23,19 @@ Platform::ProcessID Platform::GetProcessID()
     return getpid();
 }
 
-struct timespec start = { 0 };
+struct timespec starttime = { 0 };
 
 uint32 Platform::GetCurrentTimeMS() 
 {
-    if (start.tv_sec == 0 && start.tv_nsec == 0) {
-        clock_gettime(CLOCK_MONOTONIC, &start);
+    if (starttime.tv_sec == 0 && starttime.tv_nsec == 0) {
+        clock_gettime(CLOCK_MONOTONIC, &starttime);
         return 0;
     }
     struct timespec current;
     clock_gettime(CLOCK_MONOTONIC, &current);
 
-    return ((current.tv_sec - start.tv_sec) * 1000) +
-           ((current.tv_nsec  - start.tv_nsec ) / 1000 * 1000);
+    return (current.tv_sec - starttime.tv_sec) * 1000 +
+           (current.tv_nsec  - starttime.tv_nsec ) / (1000 * 1000);
 }
 
 void Platform::SleepMS(int milliseconds)
