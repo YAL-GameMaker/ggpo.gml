@@ -60,14 +60,14 @@ exit; // if this script is completely empty, the game will hard crash
 
 #define ggpo_default_event
 var _ev = argument0;
-show_debug_message(ggpo_eventcode_get_name(_ev.code) + ": " + string(_ev));
+//show_debug_message(ggpo_eventcode_get_name(_ev.code) + ": " + string(_ev));
 if (_ev.code == ggpo_eventcode_timesync) {
     ggpo_sleep(_ev.frames_ahead * game_get_speed(gamespeed_microseconds) / 1000)
 }
 
 #define ggpo_default_network_create_socket
 var _bind_port = argument0, _retries = argument1;
-show_debug_message({ func: "ggpo_default_network_create_socket", port: _bind_port, retries: _retries });
+//show_debug_message({ func: "ggpo_default_network_create_socket", port: _bind_port, retries: _retries });
 for (var _port = _bind_port; _port <= _bind_port + _retries; _port++) {
     var _socket = network_create_socket_ext(network_socket_udp, _port);
     if (_socket >= 0) return _socket;
@@ -76,7 +76,7 @@ return -1;
 
 #define ggpo_default_network_destroy_socket
 var _socket = argument0;
-show_debug_message({ func: "ggpo_default_network_destroy_socket", socket: _socket });
+//show_debug_message({ func: "ggpo_default_network_destroy_socket", socket: _socket });
 network_destroy(_socket);
 var _queue = global.__ggpo_default_packet_queue[?_socket];
 if (_queue != undefined) {
@@ -89,13 +89,15 @@ if (_queue != undefined) {
 }
 
 #define ggpo_default_network_send_packet
-show_debug_message({ func: "ggpo_default_network_send_packet", socket: _socket, ip: _url, port: _port, size: _len });
 var _socket = argument0, _url = argument1, _port = argument2, _buf = argument3, _len = argument4;
+//show_debug_message({ func: "ggpo_default_network_send_packet", socket: _socket, ip: _url, port: _port, size: _len });
 return network_send_udp(_socket, _url, _port, _buf, _len);
 
 #define ggpo_default_network_receive_packet
+var _socket = argument0;
 var _queue = global.__ggpo_default_packet_queue[?_socket];
 if (_queue == undefined || ds_queue_empty(_queue)) return -1;
+//trace("recv", _socket, _queue, _queue != undefined ? ds_queue_size(_queue) : -1)
 var _packet = ds_queue_dequeue(_queue);
 ggpo_network_packet_receive(_packet[0], _packet[1], _packet[2], _packet[3]);
 ds_queue_enqueue(global.__ggpo_default_packet_pool, _packet[2]); // GML isn't multi-threaded so no one's going to write anything to this before we return
@@ -118,7 +120,7 @@ if (ds_queue_empty(global.__ggpo_default_packet_pool)) {
     if (buffer_get_size(_buf) < _size) buffer_resize(_buf, _size);
 }
 buffer_copy(_e[?"buffer"], 0, _size, _buf, 0);
-show_debug_message({ func: "ggpo_default_async_network", socket: _socket, ip: _e[?"ip"], port: _e[?"port"], size: _size });
+//show_debug_message({ queue: _queue, func: "ggpo_default_async_network", socket: _socket, ip: _e[?"ip"], port: _e[?"port"], size: _size });
 ds_queue_enqueue(_queue, [_e[?"ip"], _e[?"port"], _buf, _size]);
 
 #define ggpo_do_game_state_save_2
@@ -208,7 +210,7 @@ return _socket;
 var _socket = argument0;
 ggpo_on_network_destroy_socket(_socket);
 
-#define ggpo_do_network_send_packet
+#define ggpo_do_network_send_packet_1
 var _socket = argument0, _len = argument1;
 var _buf = ggpo_gml_prepare_buffer(_len);
 ggpo_do_network_send_packet_2(buffer_get_address(_buf), _len);
@@ -229,13 +231,13 @@ return global.__ggpo_do_network_receive_packet__size;
 
 #define ggpo_network_packet_receive
 /// (url:string, port:int, buffer:buffer, size:int)
-var _url/*:string*/ = argument0, _port/*:int*/ = argument1, _buffer/*:buffer*/ = argument2, _size/*:int*/ = argument3;
+var _ip/*:string*/ = argument0, _port/*:int*/ = argument1, _buffer/*:buffer*/ = argument2, _size/*:int*/ = argument3;
 if (global.__ggpo_do_network_receive_packet__active) {
     var _args = global.__ggpo_fixed_buffer;
     buffer_seek(_args, buffer_seek_start, 0);
-    buffer_write(_args, buffer_u64, int64(buffer_get_address(buffer)));
-    ggpo_buffer_write_chars(_args, argument0, 64);
-    buffer_write(_args, buffer_s32, argument1);
+    buffer_write(_args, buffer_u64, int64(buffer_get_address(_buffer)));
+    ggpo_buffer_write_chars(_args, _ip, 64);
+    buffer_write(_args, buffer_s32, _port);
     global.__ggpo_do_network_receive_packet__size = _size;
     return _size;
 } else show_error("ggpo_packet_received can only be called inside ggpo_on_network_receive_packet", 1);
@@ -284,4 +286,4 @@ buffer_write(_tmp, buffer_text, _str);
 var _pos = buffer_tell(_tmp);
 if (_pos < _len) buffer_fill(_tmp, _pos, buffer_u8, 0, _len - _pos);
 buffer_copy(_tmp, 0, _len, _buf, buffer_tell(_buf));
-buffer_seek(_buf, buffer_seek_start, _len);
+buffer_seek(_buf, buffer_seek_relative, _len);

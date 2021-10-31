@@ -110,7 +110,7 @@ Udp::OnLoopPoll(void *cookie)
 
    for (;;) {
       #ifdef GML_SOCKETS
-      int len = scripts.ggpo_do_network_receive_packet.i(-1);
+      int len = scripts.ggpo_do_network_receive_packet.ll(_socket, -1);
       if (len < 0) break;
 
       gml_istream s(ggpo_fixed_buffer);

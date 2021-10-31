@@ -118,7 +118,7 @@
         {"value":"10","hidden":false,"resourceVersion":"1.0","name":"ggpo_errorcode_too_many_spectators","tags":[],"resourceType":"GMExtensionConstant",},
         {"value":"11","hidden":false,"resourceVersion":"1.0","name":"ggpo_errorcode_invalid_request","tags":[],"resourceType":"GMExtensionConstant",},
       ],"ProxyFiles":[
-        {"TargetMask":6,"resourceVersion":"1.0","name":"ggpo_gml_x64.dll","tags":[],"resourceType":"GMProxyFile",},
+        {"name":"ggpo_gml_x64.dll","tags":[],"resourceVersion":"1.0","resourceType":"GMProxyFile","TargetMask":6,},
       ],"copyToTargets":9223372036854775807,"order":[
         {"name":"ggpo_do_game_state_save_3_raw","path":"extensions/ggpo_gml/ggpo_gml.yy",},
         {"name":"ggpo_idle_raw","path":"extensions/ggpo_gml/ggpo_gml.yy",},
@@ -157,8 +157,8 @@
         {"externalName":"ggpo_default_network_create_socket","kind":11,"help":"","hidden":true,"returnType":2,"argCount":2,"args":[],"resourceVersion":"1.0","name":"ggpo_default_network_create_socket","tags":[],"resourceType":"GMExtensionFunction",},
         {"externalName":"ggpo_default_network_destroy_socket","kind":11,"help":"","hidden":true,"returnType":2,"argCount":1,"args":[],"resourceVersion":"1.0","name":"ggpo_default_network_destroy_socket","tags":[],"resourceType":"GMExtensionFunction",},
         {"externalName":"ggpo_default_network_send_packet","kind":11,"help":"","hidden":true,"returnType":2,"argCount":5,"args":[],"resourceVersion":"1.0","name":"ggpo_default_network_send_packet","tags":[],"resourceType":"GMExtensionFunction",},
-        {"externalName":"ggpo_default_network_receive_packet","kind":11,"help":"","hidden":true,"returnType":2,"argCount":0,"args":[],"resourceVersion":"1.0","name":"ggpo_default_network_receive_packet","tags":[],"resourceType":"GMExtensionFunction",},
-        {"externalName":"ggpo_default_async_network","kind":11,"help":"","hidden":true,"returnType":2,"argCount":0,"args":[],"resourceVersion":"1.0","name":"ggpo_default_async_network","tags":[],"resourceType":"GMExtensionFunction",},
+        {"externalName":"ggpo_default_network_receive_packet","kind":11,"help":"","hidden":true,"returnType":2,"argCount":1,"args":[],"resourceVersion":"1.0","name":"ggpo_default_network_receive_packet","tags":[],"resourceType":"GMExtensionFunction",},
+        {"externalName":"ggpo_default_async_network","kind":2,"help":"ggpo_default_async_network()","hidden":false,"returnType":2,"argCount":0,"args":[],"resourceVersion":"1.0","name":"ggpo_default_async_network","tags":[],"resourceType":"GMExtensionFunction",},
         {"externalName":"ggpo_do_game_state_save_2","kind":11,"help":"","hidden":true,"returnType":2,"argCount":1,"args":[],"resourceVersion":"1.0","name":"ggpo_do_game_state_save_2","tags":[],"resourceType":"GMExtensionFunction",},
         {"externalName":"ggpo_do_game_state_load_2","kind":11,"help":"","hidden":true,"returnType":2,"argCount":2,"args":[],"resourceVersion":"1.0","name":"ggpo_do_game_state_load_2","tags":[],"resourceType":"GMExtensionFunction",},
         {"externalName":"ggpo_do_game_state_dump_2","kind":11,"help":"","hidden":true,"returnType":2,"argCount":2,"args":[],"resourceVersion":"1.0","name":"ggpo_do_game_state_dump_2","tags":[],"resourceType":"GMExtensionFunction",},
@@ -168,7 +168,7 @@
         {"externalName":"ggpo_do_event_2","kind":11,"help":"","hidden":true,"returnType":2,"argCount":0,"args":[],"resourceVersion":"1.0","name":"ggpo_do_event_2","tags":[],"resourceType":"GMExtensionFunction",},
         {"externalName":"ggpo_do_network_create_socket","kind":11,"help":"","hidden":true,"returnType":2,"argCount":2,"args":[],"resourceVersion":"1.0","name":"ggpo_do_network_create_socket","tags":[],"resourceType":"GMExtensionFunction",},
         {"externalName":"ggpo_do_network_destroy_socket","kind":11,"help":"","hidden":true,"returnType":2,"argCount":1,"args":[],"resourceVersion":"1.0","name":"ggpo_do_network_destroy_socket","tags":[],"resourceType":"GMExtensionFunction",},
-        {"externalName":"ggpo_do_network_send_packet","kind":11,"help":"","hidden":true,"returnType":2,"argCount":2,"args":[],"resourceVersion":"1.0","name":"ggpo_do_network_send_packet","tags":[],"resourceType":"GMExtensionFunction",},
+        {"externalName":"ggpo_do_network_send_packet_1","kind":11,"help":"","hidden":true,"returnType":2,"argCount":2,"args":[],"resourceVersion":"1.0","name":"ggpo_do_network_send_packet_1","tags":[],"resourceType":"GMExtensionFunction",},
         {"externalName":"ggpo_do_network_receive_packet","kind":11,"help":"","hidden":true,"returnType":2,"argCount":1,"args":[],"resourceVersion":"1.0","name":"ggpo_do_network_receive_packet","tags":[],"resourceType":"GMExtensionFunction",},
         {"externalName":"ggpo_network_packet_receive","kind":2,"help":"ggpo_network_packet_receive(url:string, port:int, buffer:buffer, size:int)","hidden":false,"returnType":2,"argCount":4,"args":[
             2,
@@ -222,7 +222,7 @@
         {"name":"ggpo_do_event_2","path":"extensions/ggpo_gml/ggpo_gml.yy",},
         {"name":"ggpo_do_network_create_socket","path":"extensions/ggpo_gml/ggpo_gml.yy",},
         {"name":"ggpo_do_network_destroy_socket","path":"extensions/ggpo_gml/ggpo_gml.yy",},
-        {"name":"ggpo_do_network_send_packet","path":"extensions/ggpo_gml/ggpo_gml.yy",},
+        {"name":"ggpo_do_network_send_packet_1","path":"extensions/ggpo_gml/ggpo_gml.yy",},
         {"name":"ggpo_do_network_receive_packet","path":"extensions/ggpo_gml/ggpo_gml.yy",},
         {"name":"ggpo_network_packet_receive","path":"extensions/ggpo_gml/ggpo_gml.yy",},
         {"name":"ggpo_gml_prepare_buffer","path":"extensions/ggpo_gml/ggpo_gml.yy",},
@@ -280,7 +280,9 @@
         {"externalName":"ggpo_preinit_2","kind":2,"help":"ggpo_preinit_2(fixed_buffer:buffer)->int","hidden":false,"returnType":2,"argCount":1,"args":[
             2,
           ],"resourceVersion":"1.0","name":"ggpo_preinit_2","tags":[],"resourceType":"GMExtensionFunction",},
-      ],"constants":[],"ProxyFiles":[],"copyToTargets":-1,"order":[
+      ],"constants":[
+        
+      ],"ProxyFiles":[],"copyToTargets":-1,"order":[
         {"name":"ggpo_do_game_state_save_3","path":"extensions/ggpo_gml/ggpo_gml.yy",},
         {"name":"ggpo_idle","path":"extensions/ggpo_gml/ggpo_gml.yy",},
         {"name":"ggpo_advance_frame","path":"extensions/ggpo_gml/ggpo_gml.yy",},

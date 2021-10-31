@@ -157,7 +157,7 @@ dllx double ggpo_synchronize_input_raw(void* _ptr) {
 	return ggpo_synchronize_input(_arg_buf);
 }
 
-extern int ggpo_preinit_2(gml_asset_index_of ggpo_do_game_begin_2, gml_asset_index_of ggpo_do_advance_frame_2, gml_asset_index_of ggpo_do_game_state_save_2, gml_asset_index_of ggpo_do_game_state_load_2, gml_asset_index_of ggpo_do_game_state_free_2, gml_asset_index_of ggpo_do_game_state_dump_2, gml_asset_index_of ggpo_do_event_2, gml_buffer fixed_buffer);
+extern int ggpo_preinit_2(gml_asset_index_of ggpo_do_game_begin_2, gml_asset_index_of ggpo_do_advance_frame_2, gml_asset_index_of ggpo_do_game_state_save_2, gml_asset_index_of ggpo_do_game_state_load_2, gml_asset_index_of ggpo_do_game_state_free_2, gml_asset_index_of ggpo_do_game_state_dump_2, gml_asset_index_of ggpo_do_event_2, gml_asset_index_of ggpo_do_network_create_socket, gml_asset_index_of ggpo_do_network_destroy_socket, gml_asset_index_of ggpo_do_network_send_packet_1, gml_asset_index_of ggpo_do_network_receive_packet, gml_buffer fixed_buffer);
 dllx double ggpo_preinit_2_raw(void* _ptr) {
 	gml_istream _in(_ptr);
 	gml_asset_index_of _arg_ggpo_do_game_begin_2;
@@ -174,8 +174,16 @@ dllx double ggpo_preinit_2_raw(void* _ptr) {
 	_arg_ggpo_do_game_state_dump_2 = (gml_asset_index_of)_in.read<int32_t>();
 	gml_asset_index_of _arg_ggpo_do_event_2;
 	_arg_ggpo_do_event_2 = (gml_asset_index_of)_in.read<int32_t>();
+	gml_asset_index_of _arg_ggpo_do_network_create_socket;
+	_arg_ggpo_do_network_create_socket = (gml_asset_index_of)_in.read<int32_t>();
+	gml_asset_index_of _arg_ggpo_do_network_destroy_socket;
+	_arg_ggpo_do_network_destroy_socket = (gml_asset_index_of)_in.read<int32_t>();
+	gml_asset_index_of _arg_ggpo_do_network_send_packet_1;
+	_arg_ggpo_do_network_send_packet_1 = (gml_asset_index_of)_in.read<int32_t>();
+	gml_asset_index_of _arg_ggpo_do_network_receive_packet;
+	_arg_ggpo_do_network_receive_packet = (gml_asset_index_of)_in.read<int32_t>();
 	gml_buffer _arg_fixed_buffer;
 	_arg_fixed_buffer = _in.read_gml_buffer();
-	return ggpo_preinit_2(_arg_ggpo_do_game_begin_2, _arg_ggpo_do_advance_frame_2, _arg_ggpo_do_game_state_save_2, _arg_ggpo_do_game_state_load_2, _arg_ggpo_do_game_state_free_2, _arg_ggpo_do_game_state_dump_2, _arg_ggpo_do_event_2, _arg_fixed_buffer);
+	return ggpo_preinit_2(_arg_ggpo_do_game_begin_2, _arg_ggpo_do_advance_frame_2, _arg_ggpo_do_game_state_save_2, _arg_ggpo_do_game_state_load_2, _arg_ggpo_do_game_state_free_2, _arg_ggpo_do_game_state_dump_2, _arg_ggpo_do_event_2, _arg_ggpo_do_network_create_socket, _arg_ggpo_do_network_destroy_socket, _arg_ggpo_do_network_send_packet_1, _arg_ggpo_do_network_receive_packet, _arg_fixed_buffer);
 }
 
