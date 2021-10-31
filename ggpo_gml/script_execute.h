@@ -85,12 +85,53 @@ struct GMLVar {
 };
 typedef void(GMLFunc)(GMLVar& result, void* self, void* other, int argc, GMLVar* argv);
 
-struct GMLClosure {
-	int __unknown[26];
-	GMLFunc* func;
+class CInstanceBase {
+public:
+	GMLVar* yyvars;
+	virtual ~CInstanceBase() {};
+	virtual GMLVar& InternalGetYYVarRef(int index) = 0;
+	virtual GMLVar& InternalGetYYVarRefL(int index) = 0;
+};
+class YYObjectBase : public CInstanceBase {
+public:
+	virtual ~YYObjectBase() {};
+	virtual bool Mark4GC(uint32* _pM, int _numObjects) { return false; }
+	virtual bool MarkThisOnly4GC(uint32* _pM, int _numObjects) { return false; }
+	virtual bool MarkOnlyChildren4GC(uint32* _pM, int _numObjects) { return false; }
+	virtual void Free() {}
+	virtual void ThreadFree(void* _pGCContext) {}
+	virtual void PreFree() {}
+
+	YYObjectBase* m_pNextObject;
+	YYObjectBase* m_pPrevObject;
+	YYObjectBase* m_pPrototype;
+	void* m_pcre;
+	void* m_pcreExtra;
+	const char* m_class;
+	void* m_getOwnProperty;
+	void* m_deleteProperty;
+	void* m_defineOwnProperty;
+	void* m_yyvarsMap;
+	void** m_pWeakRefs;
+	uint32 m_numWeakRefs;
+	uint32 m_nvars;
+	uint32 m_flags;
+	uint32 m_capacity;
+	uint32 m_visited;
+	uint32 m_visitedGC;
+	int32 m_GCgen;
+	int32 m_GCcreationFrame;
+	int m_slot;
+	int m_kind;
+	int m_rvalueInitType;
+	int m_curSlot;
+};
+class GMLClosure : public YYObjectBase {
+	void* m_callScript;
+	GMLFunc* m_cppFunc;
+	void* m_yycFunc;
 };
 
-/// helpers are named based on arguments+return type, one 
 namespace script_execute {
 	extern GMLClosure* self;
 	extern GMLFunc* raw;
@@ -99,6 +140,8 @@ namespace script_execute {
 		call(result, args, argc);
 	}
 }
+// helpers are named based on arguments+return type, one char per argument and last for return
+// i=int
 struct gml_script_id {
 	int id;
 	gml_script_id() : id(-1) { }
