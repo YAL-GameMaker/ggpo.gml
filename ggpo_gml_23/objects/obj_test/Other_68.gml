@@ -1,0 +1,1 @@
+ggpo_default_async_network();

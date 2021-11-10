@@ -19,8 +19,9 @@
  *   4201 - nonstandard extension used : nameless struct/union
  *   4389 - '!=' : signed/unsigned mismatch
  *   4800 - 'int' : forcing value to bool 'true' or 'false' (performance warning)
+ *   4996 - _CRT_SECURE_NO_WARNINGS
  */
-#pragma warning(disable: 4018 4100 4127 4201 4389 4800)
+#pragma warning(disable: 4018 4100 4127 4201 4389 4800 4996)
 
 /*
  * Simple types
@@ -38,10 +39,26 @@ typedef int int32;
  */
 #if defined(_WINDOWS)
 #  include "platform_windows.h"
-#elif defined(__GNUC__)
-#  include "platform_linux.h"
+#elif defined(__GNUC__) or defined(__APPLE__)
+#  include "platform_unix.h"
 #else
 #  error Unsupported platform
+#endif
+
+#ifdef GML_SOCKETS
+#include <stdlib.h>
+#ifdef _WINDOWS
+#include <xutility>
+#else
+#include <vector>
+#endif
+typedef unsigned long long SOCKET;
+typedef unsigned short u_short;
+#define INVALID_SOCKET (~0)
+struct sockaddr_in {
+   char ip[64];
+   int port;
+};
 #endif
 
 #include "log.h"

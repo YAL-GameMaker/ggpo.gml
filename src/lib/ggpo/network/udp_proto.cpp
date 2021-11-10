@@ -73,9 +73,14 @@ UdpProtocol::Init(Udp *udp,
    _queue = queue;
    _local_connect_status = status;
 
+   #ifdef GML_SOCKETS
+   strncpy(_peer_addr.ip, ip, std::size(_peer_addr.ip));
+   _peer_addr.port = port;
+   #else
    _peer_addr.sin_family = AF_INET;
    _peer_addr.sin_port = htons(port);
    inet_pton(AF_INET, ip, &_peer_addr.sin_addr.s_addr);
+   #endif
 
    do {
       _magic_number = (uint16)rand();
@@ -248,7 +253,10 @@ UdpProtocol::OnLoopPoll(void *cookie)
          _udp = NULL;
          _shutdown_timeout = 0;
       }
+      break;
 
+   default:
+      break;
    }
 
 
@@ -294,8 +302,13 @@ UdpProtocol::HandlesMsg(sockaddr_in &from,
    if (!_udp) {
       return false;
    }
+   #ifdef GML_SOCKETS
+   return strncpy(_peer_addr.ip, from.ip, std::size(_peer_addr.ip)) &&
+          _peer_addr.port == from.port;
+   #else
    return _peer_addr.sin_addr.S_un.S_addr == from.sin_addr.S_un.S_addr &&
           _peer_addr.sin_port == from.sin_port;
+   #endif
 }
 
 void
@@ -405,7 +418,7 @@ UdpProtocol::Log(const char *fmt, ...)
    size_t offset;
    va_list args;
 
-   sprintf_s(buf, ARRAY_SIZE(buf), "udpproto%d | ", _queue);
+   snprintf(buf, ARRAY_SIZE(buf), "udpproto%d | ", _queue);
    offset = strlen(buf);
    va_start(args, fmt);
    vsnprintf(buf + offset, ARRAY_SIZE(buf) - offset - 1, fmt, args);
@@ -442,7 +455,7 @@ UdpProtocol::LogMsg(const char *prefix, UdpMsg *msg)
       Log("%s input ack.\n", prefix);
       break;
    default:
-      ASSERT(FALSE && "Unknown UdpMsg type.");
+      ASSERT(false && "Unknown UdpMsg type.");
    }
 }
 
@@ -453,13 +466,15 @@ UdpProtocol::LogEvent(const char *prefix, const UdpProtocol::Event &evt)
    case UdpProtocol::Event::Synchronzied:
       Log("%s (event: Synchronzied).\n", prefix);
       break;
+   default:
+      break;
    }
 }
 
 bool
 UdpProtocol::OnInvalid(UdpMsg *msg, int len)
 {
-   ASSERT(FALSE && "Invalid msg in UdpProtocol");
+   ASSERT(false && "Invalid msg in UdpProtocol");
    return false;
 }
 
@@ -732,7 +747,11 @@ UdpProtocol::PumpSendQueue()
          _oo_packet.msg = entry.msg;
          _oo_packet.dest_addr = entry.dest_addr;
       } else {
+         #ifdef GML_SOCKETS
+         ASSERT(entry.dest_addr.ip[0]);
+         #else
          ASSERT(entry.dest_addr.sin_addr.s_addr);
+         #endif
 
          _udp->SendTo((char *)entry.msg, entry.msg->PacketSize(), 0,
                       (struct sockaddr *)&entry.dest_addr, sizeof entry.dest_addr);

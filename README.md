@@ -26,8 +26,6 @@ You can also press Space to warp, which triggers a misprediction (hint: for pres
 - Probably not production ready and may never be truly production ready.
 - Volatile - e.g. if you pass a _completely empty_ script to one of GGPO callbacks, the _next_ callback will hard crash your game.
 - GMS2.3+ only. _Might_ be possible to make work with specific versions of GMS1.4 with other exotic tricks.
-- Windows-only because I need to pick a fork to borrow Unix-specific code from.
-- Uses GGPO's WinSock implementation instead of GameMaker sockets.
 - Due to GGPO's API specifics (players have to be initialized immediately), you'll generally have to write a lobby system on top of GGPO.
 - Doesn't include any serialization helpers - you'll have to figure out optimal saving/loading yourself.
 

@@ -5,6 +5,9 @@
 //#include "ggponet.h"
 #include "ggpo_scripts.h"
 
+#include <chrono>
+#include <thread>
+
 GGPOSession* ggpo = nullptr;
 GGPOErrorCode ggpoLastError = GGPO_OK;
 /// ->ggpo_errorcode
@@ -13,8 +16,10 @@ dllx double ggpo_get_last_error() {
 }
 
 dllx double ggpo_preinit_1(GMLClosure* _script_execute) {
+	#ifndef GML_SOCKETS
 	WSADATA wd = { 0 };
 	WSAStartup(MAKEWORD(2, 2), &wd);
+	#endif
 	script_execute::self = _script_execute;
 	script_execute::raw = _script_execute->m_cppFunc;
 	return 1;
@@ -58,7 +63,7 @@ dllx const char* ggpo_errorcode_get_name(double errorcode) {
 }
 
 dllx double ggpo_sleep(double amt) {
-	Sleep((DWORD)amt);
+	std::this_thread::sleep_for(std::chrono::milliseconds((int)amt));
 	return true;
 }
 

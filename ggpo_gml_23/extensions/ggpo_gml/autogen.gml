@@ -144,7 +144,7 @@ return ggpo_synchronize_input_raw(buffer_get_address(_buf));
 
 #define ggpo_preinit_2
 /// ggpo_preinit_2(fixed_buffer:buffer)->int
-var _buf = ggpo_gml_prepare_buffer(36);
+var _buf = ggpo_gml_prepare_buffer(52);
 buffer_write(_buf, buffer_s32, asset_get_index("ggpo_do_game_begin_2"));
 buffer_write(_buf, buffer_s32, asset_get_index("ggpo_do_advance_frame_2"));
 buffer_write(_buf, buffer_s32, asset_get_index("ggpo_do_game_state_save_2"));
@@ -152,6 +152,10 @@ buffer_write(_buf, buffer_s32, asset_get_index("ggpo_do_game_state_load_2"));
 buffer_write(_buf, buffer_s32, asset_get_index("ggpo_do_game_state_free_2"));
 buffer_write(_buf, buffer_s32, asset_get_index("ggpo_do_game_state_dump_2"));
 buffer_write(_buf, buffer_s32, asset_get_index("ggpo_do_event_2"));
+buffer_write(_buf, buffer_s32, asset_get_index("ggpo_do_network_create_socket"));
+buffer_write(_buf, buffer_s32, asset_get_index("ggpo_do_network_destroy_socket"));
+buffer_write(_buf, buffer_s32, asset_get_index("ggpo_do_network_send_packet_1"));
+buffer_write(_buf, buffer_s32, asset_get_index("ggpo_do_network_receive_packet"));
 var _val_0 = argument0;
 if (buffer_exists(_val_0)) {
 	buffer_write(_buf, buffer_u64, int64(buffer_get_address(_val_0)));

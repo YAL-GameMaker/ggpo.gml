@@ -41,6 +41,11 @@ bool ggpo_do_game_state_dump_1(char* filename, uint8_t* buffer, int len) {
 	return scripts.ggpo_do_game_state_dump_2.lii((int64_t)buffer, len) > 0;
 }
 
+void* ggpo_do_network_send_packet_data;
+dllx void ggpo_do_network_send_packet_2(uint8_t* buffer, double len) {
+	memcpy(buffer, ggpo_do_network_send_packet_data, (size_t)(int)len);
+}
+
 ///
 enum class ggpo_eventcode { // NB! sync with GGPOEventCode
 	connected_to_peer            = 1000,

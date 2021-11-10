@@ -49,7 +49,7 @@ SpectatorBackend::~SpectatorBackend()
 GGPOErrorCode
 SpectatorBackend::DoPoll(int timeout)
 {
-   _poll.Pump(0);
+   _poll.Pump();
 
    PollUdpProtocolEvents();
    return GGPO_OK;
@@ -154,12 +154,16 @@ SpectatorBackend::OnUdpProtocolEvent(UdpProtocol::Event &evt)
       _callbacks.on_event(&info);
       break;
 
-   case UdpProtocol::Event::Input:
+   case UdpProtocol::Event::Input: {
       GameInput& input = evt.u.input.input;
 
       _host.SetLocalFrameNumber(input.frame);
       _host.SendInputAck();
       _inputs[input.frame % SPECTATOR_FRAME_BUFFER_SIZE] = input;
+      break;
+   }
+
+   case UdpProtocol::Event::Unknown:
       break;
    }
 }

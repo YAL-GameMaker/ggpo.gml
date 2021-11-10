@@ -31,7 +31,7 @@ Peer2PeerBackend::Peer2PeerBackend(GGPOSessionCallbacks *cb,
    /*
     * Initialize the synchronziation layer
     */
-   Sync::Config config = { 0 };
+   Sync::Config config = { { 0 } };
    config.num_players = num_players;
    config.input_size = input_size;
    config.callbacks = _callbacks;
@@ -102,7 +102,7 @@ GGPOErrorCode
 Peer2PeerBackend::DoPoll(int timeout)
 {
    if (!_sync.InRollback()) {
-      _poll.Pump(0);
+      _poll.Pump();
 
       PollUdpProtocolEvents();
 
@@ -161,7 +161,7 @@ Peer2PeerBackend::DoPoll(int timeout)
          }
          // XXX: this is obviously a farce...
          if (timeout) {
-            Sleep(1);
+            Platform::SleepMS(1);
          }
       }
    }
@@ -385,6 +385,8 @@ Peer2PeerBackend::OnUdpProtocolPeerEvent(UdpProtocol::Event &evt, int queue)
    case UdpProtocol::Event::Disconnected:
       DisconnectPlayer(QueueToPlayerHandle(queue));
       break;
+   default:
+      break;
    }
 }
 
@@ -405,6 +407,8 @@ Peer2PeerBackend::OnUdpProtocolSpectatorEvent(UdpProtocol::Event &evt, int queue
       info.u.disconnected.player = handle;
       _callbacks.on_event(&info);
 
+      break;
+   default:
       break;
    }
 }
@@ -446,6 +450,8 @@ Peer2PeerBackend::OnUdpProtocolEvent(UdpProtocol::Event &evt, GGPOPlayerHandle h
       info.code = GGPO_EVENTCODE_CONNECTION_RESUMED;
       info.u.connection_resumed.player = handle;
       _callbacks.on_event(&info);
+      break;
+   default:
       break;
    }
 }

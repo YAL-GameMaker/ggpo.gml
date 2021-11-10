@@ -22,9 +22,10 @@ using namespace std;
 #ifdef _WINDEF_
 /// auto-generates a window_handle() on GML side
 typedef HWND GAME_HWND;
+#endif
+
 /// auto-generates an asset_get_index(argument_name) on GML side
 typedef int gml_asset_index_of;
-#endif
 
 struct gml_buffer {
 private:
@@ -50,6 +51,11 @@ public:
 		static_assert(std::is_trivially_copyable_v<T>, "T must be trivially copyable to be read");
 		T result{};
 		std::memcpy(&result, pos, sizeof(T));
+		pos += sizeof(T);
+		return result;
+	}
+	template<class T> T* read_ref() {
+		auto result = (T*)pos;
 		pos += sizeof(T);
 		return result;
 	}
