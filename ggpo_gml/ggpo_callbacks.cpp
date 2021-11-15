@@ -67,7 +67,7 @@ dllx const char* ggpo_eventcode_get_name(double eventcode) {
 		case ggpo_eventcode::timesync: return "timesync";
 		case ggpo_eventcode::connection_interrupted: return "connection_interrupted";
 		case ggpo_eventcode::connection_resumed: return "connection_resumed";
-		return "???";
+		default: return "???";
 	}
 }
 

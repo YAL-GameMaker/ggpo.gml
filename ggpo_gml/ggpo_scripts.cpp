@@ -33,6 +33,8 @@ dllg int ggpo_preinit_2(
 	X(ggpo_do_network_destroy_socket);
 	X(ggpo_do_network_send_packet_1);
 	X(ggpo_do_network_receive_packet);
+	#undef X
+	
 	return 1;
 }
 
