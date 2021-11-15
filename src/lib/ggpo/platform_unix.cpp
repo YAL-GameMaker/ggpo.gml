@@ -13,6 +13,9 @@
 #include <unistd.h>
 #include <chrono>
 #include <thread>
+#ifdef WASM
+#include <emscripten.h>
+#endif
 
 static void __attribute__((constructor)) DllMain() {
    srand(Platform::GetCurrentTimeMS() + Platform::GetProcessID());
@@ -43,9 +46,9 @@ void Platform::SleepMS(int milliseconds)
     std::this_thread::sleep_for(std::chrono::milliseconds(milliseconds));
 }
 
-void Platform::AssertFailed(char *msg)
+void Platform::AssertFailed(char* msg)
 {
-    std::cerr << msg;
+    std::cerr << msg << std::endl;
     Platform::DebugBreak();
     // TODO(emoller)
 }
@@ -64,11 +67,21 @@ Platform::GetConfigInt(const char* name)
 
 bool Platform::GetConfigBool(const char* name)
 {
+   #ifdef WASM
+   //if (strcmp(name, "ggpo.log") == 0) return true;
+   //if (strcmp(name, "ggpo.log.timestamps") == 0) return true;
+   #endif
     // TODO(emoller)
     return false;
 }
 
 void Platform::DebugBreak()
 {
-    raise(SIGTRAP);
+   #ifdef WASM
+   EM_ASM({
+      debugger;
+      });
+   #else
+   raise(SIGTRAP);
+   #endif
 }

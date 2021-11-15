@@ -31,6 +31,7 @@ if %ERRORLEVEL% EQU 0 (
 	
 	gmxgen "%ext23%\%extName%.yy" ^
 	--remap "gml_ggpo_" "ggpo_" ^
+	--helper-prefix "ggpo_gml" ^
 	--copy "%dllPath%" "%dllRel%:%arch%"
 
 ) else (

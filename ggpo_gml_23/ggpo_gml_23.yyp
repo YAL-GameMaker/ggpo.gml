@@ -4,13 +4,16 @@
     {"id":{"name":"spr_player","path":"sprites/spr_player/spr_player.yy",},"order":0,},
     {"id":{"name":"fnt_test","path":"fonts/fnt_test/fnt_test.yy",},"order":1,},
     {"id":{"name":"obj_test","path":"objects/obj_test/obj_test.yy",},"order":1,},
+    {"id":{"name":"obj_init","path":"objects/obj_init/obj_init.yy",},"order":4,},
     {"id":{"name":"rm_test","path":"rooms/rm_test/rm_test.yy",},"order":1,},
     {"id":{"name":"obj_startup","path":"objects/obj_startup/obj_startup.yy",},"order":3,},
     {"id":{"name":"ggpo_gml","path":"extensions/ggpo_gml/ggpo_gml.yy",},"order":1,},
     {"id":{"name":"obj_player","path":"objects/obj_player/obj_player.yy",},"order":2,},
+    {"id":{"name":"rm_init","path":"rooms/rm_init/rm_init.yy",},"order":0,},
     {"id":{"name":"scr_test","path":"scripts/scr_test/scr_test.yy",},"order":1,},
     {"id":{"name":"scr_advance_frame","path":"scripts/scr_advance_frame/scr_advance_frame.yy",},"order":2,},
     {"id":{"name":"cycle","path":"scripts/cycle/cycle.yy",},"order":3,},
+    {"id":{"name":"ggpo_websocket_test","path":"scripts/ggpo_websocket_test/ggpo_websocket_test.yy",},"order":4,},
   ],
   "Options": [
     {"name":"iOS","path":"options/ios/options_ios.yy",},
@@ -38,6 +41,7 @@
     "children": [],
   },
   "RoomOrderNodes": [
+    {"roomId":{"name":"rm_init","path":"rooms/rm_init/rm_init.yy",},},
     {"roomId":{"name":"rm_test","path":"rooms/rm_test/rm_test.yy",},},
   ],
   "Folders": [
@@ -62,7 +66,11 @@
   "TextureGroups": [
     {"isScaled":true,"autocrop":true,"border":2,"mipsToGenerate":0,"groupParent":null,"targets":-1,"resourceVersion":"1.3","name":"Default","resourceType":"GMTextureGroup",},
   ],
-  "IncludedFiles": [],
+  "IncludedFiles": [
+    {"CopyToMask":0,"filePath":"datafiles","resourceVersion":"1.0","name":"ggpo_gml.html","resourceType":"GMIncludedFile",},
+    {"CopyToMask":32,"filePath":"datafiles","resourceVersion":"1.0","name":"ggpo_gml_wasm.wasm","resourceType":"GMIncludedFile",},
+    {"CopyToMask":32,"filePath":"datafiles","resourceVersion":"1.0","name":"ggpo_gml_wasm.js","resourceType":"GMIncludedFile",},
+  ],
   "MetaData": {
     "IDEVersion": "2.3.6.595",
   },

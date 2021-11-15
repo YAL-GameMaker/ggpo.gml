@@ -17,57 +17,73 @@
   "installdir": "",
   "files": [
     {"filename":"ggpo_gml.dll","origname":"extensions\\ggpo_gml.dll","init":"","final":"","kind":1,"uncompress":false,"functions":[
-        {"externalName":"ggpo_do_game_state_save_3_raw","kind":11,"help":"","hidden":true,"returnType":2,"argCount":1,"args":[
+        {"externalName":"ggpo_do_game_state_save_3_raw","kind":11,"help":"","hidden":true,"returnType":2,"argCount":2,"args":[
             1,
+            2,
           ],"resourceVersion":"1.0","name":"ggpo_do_game_state_save_3_raw","tags":[],"resourceType":"GMExtensionFunction",},
-        {"externalName":"ggpo_idle_raw","kind":11,"help":"","hidden":true,"returnType":2,"argCount":1,"args":[
+        {"externalName":"ggpo_idle_raw","kind":11,"help":"","hidden":true,"returnType":2,"argCount":2,"args":[
             1,
+            2,
           ],"resourceVersion":"1.0","name":"ggpo_idle_raw","tags":[],"resourceType":"GMExtensionFunction",},
-        {"externalName":"ggpo_advance_frame_raw","kind":11,"help":"","hidden":true,"returnType":2,"argCount":1,"args":[
+        {"externalName":"ggpo_advance_frame_raw","kind":11,"help":"","hidden":true,"returnType":2,"argCount":2,"args":[
             1,
+            2,
           ],"resourceVersion":"1.0","name":"ggpo_advance_frame_raw","tags":[],"resourceType":"GMExtensionFunction",},
-        {"externalName":"ggpo_player_is_active_raw","kind":11,"help":"","hidden":true,"returnType":2,"argCount":1,"args":[
+        {"externalName":"ggpo_player_is_active_raw","kind":11,"help":"","hidden":true,"returnType":2,"argCount":2,"args":[
             1,
+            2,
           ],"resourceVersion":"1.0","name":"ggpo_player_is_active_raw","tags":[],"resourceType":"GMExtensionFunction",},
-        {"externalName":"ggpo_set_input_size_raw","kind":11,"help":"","hidden":true,"returnType":2,"argCount":1,"args":[
+        {"externalName":"ggpo_set_input_size_raw","kind":11,"help":"","hidden":true,"returnType":2,"argCount":2,"args":[
             1,
+            2,
           ],"resourceVersion":"1.0","name":"ggpo_set_input_size_raw","tags":[],"resourceType":"GMExtensionFunction",},
-        {"externalName":"ggpo_start_session_raw","kind":11,"help":"","hidden":true,"returnType":2,"argCount":1,"args":[
+        {"externalName":"ggpo_start_session_raw","kind":11,"help":"","hidden":true,"returnType":2,"argCount":2,"args":[
             1,
+            2,
           ],"resourceVersion":"1.0","name":"ggpo_start_session_raw","tags":[],"resourceType":"GMExtensionFunction",},
-        {"externalName":"ggpo_start_spectating_raw","kind":11,"help":"","hidden":true,"returnType":2,"argCount":2,"args":[
+        {"externalName":"ggpo_start_spectating_raw","kind":11,"help":"","hidden":true,"returnType":2,"argCount":3,"args":[
             1,
+            2,
             1,
           ],"resourceVersion":"1.0","name":"ggpo_start_spectating_raw","tags":[],"resourceType":"GMExtensionFunction",},
-        {"externalName":"ggpo_start_synctest_raw","kind":11,"help":"","hidden":true,"returnType":2,"argCount":1,"args":[
+        {"externalName":"ggpo_start_synctest_raw","kind":11,"help":"","hidden":true,"returnType":2,"argCount":2,"args":[
             1,
+            2,
           ],"resourceVersion":"1.0","name":"ggpo_start_synctest_raw","tags":[],"resourceType":"GMExtensionFunction",},
-        {"externalName":"ggpo_close_session_raw","kind":11,"help":"","hidden":true,"returnType":2,"argCount":1,"args":[
+        {"externalName":"ggpo_close_session_raw","kind":11,"help":"","hidden":true,"returnType":2,"argCount":2,"args":[
             1,
+            2,
           ],"resourceVersion":"1.0","name":"ggpo_close_session_raw","tags":[],"resourceType":"GMExtensionFunction",},
-        {"externalName":"ggpo_add_local_player_raw","kind":11,"help":"","hidden":true,"returnType":2,"argCount":1,"args":[
+        {"externalName":"ggpo_add_local_player_raw","kind":11,"help":"","hidden":true,"returnType":2,"argCount":2,"args":[
             1,
+            2,
           ],"resourceVersion":"1.0","name":"ggpo_add_local_player_raw","tags":[],"resourceType":"GMExtensionFunction",},
-        {"externalName":"ggpo_add_remote_player_raw","kind":11,"help":"","hidden":true,"returnType":2,"argCount":2,"args":[
+        {"externalName":"ggpo_add_remote_player_raw","kind":11,"help":"","hidden":true,"returnType":2,"argCount":3,"args":[
             1,
+            2,
             1,
           ],"resourceVersion":"1.0","name":"ggpo_add_remote_player_raw","tags":[],"resourceType":"GMExtensionFunction",},
-        {"externalName":"ggpo_disconnect_player_raw","kind":11,"help":"","hidden":true,"returnType":2,"argCount":1,"args":[
+        {"externalName":"ggpo_disconnect_player_raw","kind":11,"help":"","hidden":true,"returnType":2,"argCount":2,"args":[
             1,
+            2,
           ],"resourceVersion":"1.0","name":"ggpo_disconnect_player_raw","tags":[],"resourceType":"GMExtensionFunction",},
-        {"externalName":"ggpo_set_frame_delay_raw","kind":11,"help":"","hidden":true,"returnType":2,"argCount":1,"args":[
+        {"externalName":"ggpo_set_frame_delay_raw","kind":11,"help":"","hidden":true,"returnType":2,"argCount":2,"args":[
             1,
+            2,
           ],"resourceVersion":"1.0","name":"ggpo_set_frame_delay_raw","tags":[],"resourceType":"GMExtensionFunction",},
-        {"externalName":"ggpo_add_local_input_raw","kind":11,"help":"","hidden":true,"returnType":2,"argCount":1,"args":[
+        {"externalName":"ggpo_add_local_input_raw","kind":11,"help":"","hidden":true,"returnType":2,"argCount":2,"args":[
             1,
+            2,
           ],"resourceVersion":"1.0","name":"ggpo_add_local_input_raw","tags":[],"resourceType":"GMExtensionFunction",},
-        {"externalName":"ggpo_synchronize_input_raw","kind":11,"help":"","hidden":true,"returnType":2,"argCount":1,"args":[
+        {"externalName":"ggpo_synchronize_input_raw","kind":11,"help":"","hidden":true,"returnType":2,"argCount":2,"args":[
             1,
+            2,
           ],"resourceVersion":"1.0","name":"ggpo_synchronize_input_raw","tags":[],"resourceType":"GMExtensionFunction",},
-        {"externalName":"ggpo_preinit_2_raw","kind":11,"help":"","hidden":true,"returnType":2,"argCount":1,"args":[
+        {"externalName":"ggpo_preinit_2_raw","kind":11,"help":"","hidden":true,"returnType":2,"argCount":2,"args":[
             1,
+            2,
           ],"resourceVersion":"1.0","name":"ggpo_preinit_2_raw","tags":[],"resourceType":"GMExtensionFunction",},
-        {"externalName":"ggpo_do_network_send_packet_2","kind":11,"help":"","hidden":true,"returnType":1,"argCount":2,"args":[
+        {"externalName":"ggpo_do_network_send_packet_2","kind":11,"help":"","hidden":true,"returnType":2,"argCount":2,"args":[
             1,
             2,
           ],"resourceVersion":"1.0","name":"ggpo_do_network_send_packet_2","tags":[],"resourceType":"GMExtensionFunction",},
@@ -75,8 +91,9 @@
             2,
           ],"resourceVersion":"1.0","name":"ggpo_eventcode_get_name","tags":[],"resourceType":"GMExtensionFunction",},
         {"externalName":"ggpo_get_last_error","kind":1,"help":"ggpo_get_last_error()->ggpo_errorcode","hidden":false,"returnType":2,"argCount":0,"args":[],"resourceVersion":"1.0","name":"ggpo_get_last_error","tags":[],"resourceType":"GMExtensionFunction",},
-        {"externalName":"ggpo_preinit_1","kind":11,"help":"","hidden":true,"returnType":2,"argCount":1,"args":[
+        {"externalName":"ggpo_preinit_1","kind":11,"help":"","hidden":true,"returnType":2,"argCount":2,"args":[
             1,
+            2,
           ],"resourceVersion":"1.0","name":"ggpo_preinit_1","tags":[],"resourceType":"GMExtensionFunction",},
         {"externalName":"ggpo_errorcode_get_name","kind":11,"help":"","hidden":true,"returnType":1,"argCount":1,"args":[
             2,
@@ -84,15 +101,18 @@
         {"externalName":"ggpo_sleep","kind":11,"help":"","hidden":true,"returnType":2,"argCount":1,"args":[
             2,
           ],"resourceVersion":"1.0","name":"ggpo_sleep","tags":[],"resourceType":"GMExtensionFunction",},
-        {"externalName":"gml_ggpo_set_disconnect_timeout","kind":1,"help":"gml_ggpo_set_disconnect_timeout(timeout)->ggpo_errorcode","hidden":false,"returnType":2,"argCount":1,"args":[
+        {"externalName":"gml_ggpo_set_disconnect_timeout","kind":1,"help":"gml_ggpo_set_disconnect_timeout()->ggpo_errorcode","hidden":false,"returnType":2,"argCount":1,"args":[
             2,
           ],"resourceVersion":"1.0","name":"ggpo_set_disconnect_timeout","tags":[],"resourceType":"GMExtensionFunction",},
-        {"externalName":"gml_ggpo_set_disconnect_notify_start","kind":1,"help":"gml_ggpo_set_disconnect_notify_start(timeout)->ggpo_errorcode","hidden":false,"returnType":2,"argCount":1,"args":[
+        {"externalName":"gml_ggpo_set_disconnect_notify_start","kind":1,"help":"gml_ggpo_set_disconnect_notify_start()->ggpo_errorcode","hidden":false,"returnType":2,"argCount":1,"args":[
             2,
           ],"resourceVersion":"1.0","name":"ggpo_set_disconnect_notify_start","tags":[],"resourceType":"GMExtensionFunction",},
-        {"externalName":"ggpo_set_game_name","kind":11,"help":"","hidden":true,"returnType":1,"argCount":1,"args":[
+        {"externalName":"ggpo_set_game_name","kind":11,"help":"","hidden":true,"returnType":2,"argCount":1,"args":[
             1,
           ],"resourceVersion":"1.0","name":"ggpo_set_game_name","tags":[],"resourceType":"GMExtensionFunction",},
+        {"externalName":"ggpo_gml_fixed_buffer_set_wptr","kind":11,"help":"","hidden":true,"returnType":2,"argCount":1,"args":[
+            2,
+          ],"resourceVersion":"1.0","name":"ggpo_gml_fixed_buffer_set_wptr","tags":[],"resourceType":"GMExtensionFunction",},
       ],"constants":[
         {"value":"1024","hidden":false,"resourceVersion":"1.0","name":"ggpo_fixed_buffer_size","tags":[],"resourceType":"GMExtensionConstant",},
         {"value":"1000","hidden":false,"resourceVersion":"1.0","name":"ggpo_eventcode_connected_to_peer","tags":[],"resourceType":"GMExtensionConstant",},
@@ -118,7 +138,7 @@
         {"value":"10","hidden":false,"resourceVersion":"1.0","name":"ggpo_errorcode_too_many_spectators","tags":[],"resourceType":"GMExtensionConstant",},
         {"value":"11","hidden":false,"resourceVersion":"1.0","name":"ggpo_errorcode_invalid_request","tags":[],"resourceType":"GMExtensionConstant",},
       ],"ProxyFiles":[
-        {"TargetMask":6,"resourceVersion":"1.0","name":"ggpo_gml_x64.dll","tags":[],"resourceType":"GMProxyFile",},
+        {"name":"ggpo_gml_x64.dll","tags":[],"resourceVersion":"1.0","resourceType":"GMProxyFile","TargetMask":6,},
       ],"copyToTargets":64,"order":[
         {"name":"ggpo_do_game_state_save_3_raw","path":"extensions/ggpo_gml/ggpo_gml.yy",},
         {"name":"ggpo_idle_raw","path":"extensions/ggpo_gml/ggpo_gml.yy",},
@@ -145,9 +165,11 @@
         {"name":"ggpo_set_disconnect_timeout","path":"extensions/ggpo_gml/ggpo_gml.yy",},
         {"name":"ggpo_set_disconnect_notify_start","path":"extensions/ggpo_gml/ggpo_gml.yy",},
         {"name":"ggpo_set_game_name","path":"extensions/ggpo_gml/ggpo_gml.yy",},
+        {"name":"ggpo_gml_fixed_buffer_set_wptr","path":"extensions/ggpo_gml/ggpo_gml.yy",},
       ],"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMExtensionFile",},
     {"filename":"ggpo_gml.gml","origname":"extensions\\gml.gml","init":"ggpo_preinit","final":"","kind":2,"uncompress":false,"functions":[
         {"externalName":"ggpo_preinit","kind":11,"help":"","hidden":true,"returnType":2,"argCount":0,"args":[],"resourceVersion":"1.0","name":"ggpo_preinit","tags":[],"resourceType":"GMExtensionFunction",},
+        {"externalName":"gmcallback_ggpo_preinit","kind":11,"help":"","hidden":true,"returnType":2,"argCount":0,"args":[],"resourceVersion":"1.0","name":"gmcallback_ggpo_preinit","tags":[],"resourceType":"GMExtensionFunction",},
         {"externalName":"ggpo_default_game_state_save","kind":11,"help":"","hidden":true,"returnType":2,"argCount":0,"args":[],"resourceVersion":"1.0","name":"ggpo_default_game_state_save","tags":[],"resourceType":"GMExtensionFunction",},
         {"externalName":"ggpo_default_game_state_load","kind":11,"help":"","hidden":true,"returnType":2,"argCount":0,"args":[],"resourceVersion":"1.0","name":"ggpo_default_game_state_load","tags":[],"resourceType":"GMExtensionFunction",},
         {"externalName":"ggpo_default_game_state_dump","kind":11,"help":"","hidden":true,"returnType":2,"argCount":0,"args":[],"resourceVersion":"1.0","name":"ggpo_default_game_state_dump","tags":[],"resourceType":"GMExtensionFunction",},
@@ -158,7 +180,7 @@
         {"externalName":"ggpo_default_network_destroy_socket","kind":11,"help":"","hidden":true,"returnType":2,"argCount":1,"args":[],"resourceVersion":"1.0","name":"ggpo_default_network_destroy_socket","tags":[],"resourceType":"GMExtensionFunction",},
         {"externalName":"ggpo_default_network_send_packet","kind":11,"help":"","hidden":true,"returnType":2,"argCount":5,"args":[],"resourceVersion":"1.0","name":"ggpo_default_network_send_packet","tags":[],"resourceType":"GMExtensionFunction",},
         {"externalName":"ggpo_default_network_receive_packet","kind":11,"help":"","hidden":true,"returnType":2,"argCount":1,"args":[],"resourceVersion":"1.0","name":"ggpo_default_network_receive_packet","tags":[],"resourceType":"GMExtensionFunction",},
-        {"externalName":"ggpo_default_async_network","kind":2,"help":"ggpo_default_async_network()","hidden":false,"returnType":2,"argCount":0,"args":[],"resourceVersion":"1.0","name":"ggpo_default_async_network","tags":[],"resourceType":"GMExtensionFunction",},
+        {"externalName":"ggpo_default_async_network","kind":2,"help":"ggpo_default_async_network(?async_load)","hidden":false,"returnType":2,"argCount":-1,"args":[],"resourceVersion":"1.0","name":"ggpo_default_async_network","tags":[],"resourceType":"GMExtensionFunction",},
         {"externalName":"ggpo_do_game_state_save_2","kind":11,"help":"","hidden":true,"returnType":2,"argCount":1,"args":[],"resourceVersion":"1.0","name":"ggpo_do_game_state_save_2","tags":[],"resourceType":"GMExtensionFunction",},
         {"externalName":"ggpo_do_game_state_load_2","kind":11,"help":"","hidden":true,"returnType":2,"argCount":2,"args":[],"resourceVersion":"1.0","name":"ggpo_do_game_state_load_2","tags":[],"resourceType":"GMExtensionFunction",},
         {"externalName":"ggpo_do_game_state_dump_2","kind":11,"help":"","hidden":true,"returnType":2,"argCount":2,"args":[],"resourceVersion":"1.0","name":"ggpo_do_game_state_dump_2","tags":[],"resourceType":"GMExtensionFunction",},
@@ -188,7 +210,9 @@
             2,
             2,
           ],"resourceVersion":"1.0","name":"ggpo_buffer_write_chars","tags":[],"resourceType":"GMExtensionFunction",},
+        {"externalName":"gmcallback_ggpo_gml_script_execute","kind":11,"help":"","hidden":true,"returnType":2,"argCount":8,"args":[],"resourceVersion":"1.0","name":"gmcallback_ggpo_gml_script_execute","tags":[],"resourceType":"GMExtensionFunction",},
       ],"constants":[
+        {"value":"global.g_ggpo_gml_is_js","hidden":false,"resourceVersion":"1.0","name":"ggpo_gml_is_js","tags":[],"resourceType":"GMExtensionConstant",},
         {"value":"global.g_ggpo_game_state_base_size","hidden":false,"resourceVersion":"1.0","name":"ggpo_game_state_base_size","tags":[],"resourceType":"GMExtensionConstant",},
         {"value":"global.g_ggpo_on_game_state_save","hidden":false,"resourceVersion":"1.0","name":"ggpo_on_game_state_save","tags":[],"resourceType":"GMExtensionConstant",},
         {"value":"global.g_ggpo_on_game_state_load","hidden":false,"resourceVersion":"1.0","name":"ggpo_on_game_state_load","tags":[],"resourceType":"GMExtensionConstant",},
@@ -202,6 +226,7 @@
         {"value":"global.g_ggpo_on_network_receive_packet","hidden":false,"resourceVersion":"1.0","name":"ggpo_on_network_receive_packet","tags":[],"resourceType":"GMExtensionConstant",},
       ],"ProxyFiles":[],"copyToTargets":9223372036854775807,"order":[
         {"name":"ggpo_preinit","path":"extensions/ggpo_gml/ggpo_gml.yy",},
+        {"name":"gmcallback_ggpo_preinit","path":"extensions/ggpo_gml/ggpo_gml.yy",},
         {"name":"ggpo_default_game_state_save","path":"extensions/ggpo_gml/ggpo_gml.yy",},
         {"name":"ggpo_default_game_state_load","path":"extensions/ggpo_gml/ggpo_gml.yy",},
         {"name":"ggpo_default_game_state_dump","path":"extensions/ggpo_gml/ggpo_gml.yy",},
@@ -228,6 +253,7 @@
         {"name":"ggpo_gml_prepare_buffer","path":"extensions/ggpo_gml/ggpo_gml.yy",},
         {"name":"ggpo_buffer_read_chars","path":"extensions/ggpo_gml/ggpo_gml.yy",},
         {"name":"ggpo_buffer_write_chars","path":"extensions/ggpo_gml/ggpo_gml.yy",},
+        {"name":"gmcallback_ggpo_gml_script_execute","path":"extensions/ggpo_gml/ggpo_gml.yy",},
       ],"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMExtensionFile",},
     {"filename":"autogen.gml","origname":"extensions\\autogen.gml","init":"","final":"","kind":2,"uncompress":false,"functions":[
         {"externalName":"ggpo_do_game_state_save_3","kind":2,"help":"ggpo_do_game_state_save_3(buf:buffer)","hidden":false,"returnType":2,"argCount":1,"args":[
@@ -274,13 +300,15 @@
             2,
           ],"resourceVersion":"1.0","name":"ggpo_set_frame_delay","tags":[],"resourceType":"GMExtensionFunction",},
         {"externalName":"ggpo_add_local_input","kind":2,"help":"ggpo_add_local_input(player_handle:int, buf:buffer, ?size:int?)->int","hidden":false,"returnType":2,"argCount":-1,"args":[],"resourceVersion":"1.0","name":"ggpo_add_local_input","tags":[],"resourceType":"GMExtensionFunction",},
-        {"externalName":"ggpo_synchronize_input","kind":2,"help":"ggpo_synchronize_input(buf:buffer)->int","hidden":false,"returnType":2,"argCount":1,"args":[
+        {"externalName":"ggpo_synchronize_input","kind":2,"help":"ggpo_synchronize_input(out_buffer:buffer)->int","hidden":false,"returnType":2,"argCount":1,"args":[
             2,
           ],"resourceVersion":"1.0","name":"ggpo_synchronize_input","tags":[],"resourceType":"GMExtensionFunction",},
         {"externalName":"ggpo_preinit_2","kind":2,"help":"ggpo_preinit_2(fixed_buffer:buffer)->int","hidden":false,"returnType":2,"argCount":1,"args":[
             2,
           ],"resourceVersion":"1.0","name":"ggpo_preinit_2","tags":[],"resourceType":"GMExtensionFunction",},
-      ],"constants":[],"ProxyFiles":[],"copyToTargets":-1,"order":[
+      ],"constants":[
+        
+      ],"ProxyFiles":[],"copyToTargets":-1,"order":[
         {"name":"ggpo_do_game_state_save_3","path":"extensions/ggpo_gml/ggpo_gml.yy",},
         {"name":"ggpo_idle","path":"extensions/ggpo_gml/ggpo_gml.yy",},
         {"name":"ggpo_advance_frame","path":"extensions/ggpo_gml/ggpo_gml.yy",},
@@ -299,57 +327,73 @@
         {"name":"ggpo_preinit_2","path":"extensions/ggpo_gml/ggpo_gml.yy",},
       ],"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMExtensionFile",},
     {"filename":"ggpo_gml.dylib","origname":"","init":"","final":"","kind":1,"uncompress":false,"functions":[
-        {"externalName":"ggpo_do_game_state_save_3_raw","kind":11,"help":"","hidden":true,"returnType":2,"argCount":1,"args":[
+        {"externalName":"ggpo_do_game_state_save_3_raw","kind":11,"help":"","hidden":true,"returnType":2,"argCount":2,"args":[
             1,
+            2,
           ],"resourceVersion":"1.0","name":"ggpo_do_game_state_save_3_raw","tags":[],"resourceType":"GMExtensionFunction",},
-        {"externalName":"ggpo_idle_raw","kind":11,"help":"","hidden":true,"returnType":2,"argCount":1,"args":[
+        {"externalName":"ggpo_idle_raw","kind":11,"help":"","hidden":true,"returnType":2,"argCount":2,"args":[
             1,
+            2,
           ],"resourceVersion":"1.0","name":"ggpo_idle_raw","tags":[],"resourceType":"GMExtensionFunction",},
-        {"externalName":"ggpo_advance_frame_raw","kind":11,"help":"","hidden":true,"returnType":2,"argCount":1,"args":[
+        {"externalName":"ggpo_advance_frame_raw","kind":11,"help":"","hidden":true,"returnType":2,"argCount":2,"args":[
             1,
+            2,
           ],"resourceVersion":"1.0","name":"ggpo_advance_frame_raw","tags":[],"resourceType":"GMExtensionFunction",},
-        {"externalName":"ggpo_player_is_active_raw","kind":11,"help":"","hidden":true,"returnType":2,"argCount":1,"args":[
+        {"externalName":"ggpo_player_is_active_raw","kind":11,"help":"","hidden":true,"returnType":2,"argCount":2,"args":[
             1,
+            2,
           ],"resourceVersion":"1.0","name":"ggpo_player_is_active_raw","tags":[],"resourceType":"GMExtensionFunction",},
-        {"externalName":"ggpo_set_input_size_raw","kind":11,"help":"","hidden":true,"returnType":2,"argCount":1,"args":[
+        {"externalName":"ggpo_set_input_size_raw","kind":11,"help":"","hidden":true,"returnType":2,"argCount":2,"args":[
             1,
+            2,
           ],"resourceVersion":"1.0","name":"ggpo_set_input_size_raw","tags":[],"resourceType":"GMExtensionFunction",},
-        {"externalName":"ggpo_start_session_raw","kind":11,"help":"","hidden":true,"returnType":2,"argCount":1,"args":[
+        {"externalName":"ggpo_start_session_raw","kind":11,"help":"","hidden":true,"returnType":2,"argCount":2,"args":[
             1,
+            2,
           ],"resourceVersion":"1.0","name":"ggpo_start_session_raw","tags":[],"resourceType":"GMExtensionFunction",},
-        {"externalName":"ggpo_start_spectating_raw","kind":11,"help":"","hidden":true,"returnType":2,"argCount":2,"args":[
+        {"externalName":"ggpo_start_spectating_raw","kind":11,"help":"","hidden":true,"returnType":2,"argCount":3,"args":[
             1,
+            2,
             1,
           ],"resourceVersion":"1.0","name":"ggpo_start_spectating_raw","tags":[],"resourceType":"GMExtensionFunction",},
-        {"externalName":"ggpo_start_synctest_raw","kind":11,"help":"","hidden":true,"returnType":2,"argCount":1,"args":[
+        {"externalName":"ggpo_start_synctest_raw","kind":11,"help":"","hidden":true,"returnType":2,"argCount":2,"args":[
             1,
+            2,
           ],"resourceVersion":"1.0","name":"ggpo_start_synctest_raw","tags":[],"resourceType":"GMExtensionFunction",},
-        {"externalName":"ggpo_close_session_raw","kind":11,"help":"","hidden":true,"returnType":2,"argCount":1,"args":[
+        {"externalName":"ggpo_close_session_raw","kind":11,"help":"","hidden":true,"returnType":2,"argCount":2,"args":[
             1,
+            2,
           ],"resourceVersion":"1.0","name":"ggpo_close_session_raw","tags":[],"resourceType":"GMExtensionFunction",},
-        {"externalName":"ggpo_add_local_player_raw","kind":11,"help":"","hidden":true,"returnType":2,"argCount":1,"args":[
+        {"externalName":"ggpo_add_local_player_raw","kind":11,"help":"","hidden":true,"returnType":2,"argCount":2,"args":[
             1,
+            2,
           ],"resourceVersion":"1.0","name":"ggpo_add_local_player_raw","tags":[],"resourceType":"GMExtensionFunction",},
-        {"externalName":"ggpo_add_remote_player_raw","kind":11,"help":"","hidden":true,"returnType":2,"argCount":2,"args":[
+        {"externalName":"ggpo_add_remote_player_raw","kind":11,"help":"","hidden":true,"returnType":2,"argCount":3,"args":[
             1,
+            2,
             1,
           ],"resourceVersion":"1.0","name":"ggpo_add_remote_player_raw","tags":[],"resourceType":"GMExtensionFunction",},
-        {"externalName":"ggpo_disconnect_player_raw","kind":11,"help":"","hidden":true,"returnType":2,"argCount":1,"args":[
+        {"externalName":"ggpo_disconnect_player_raw","kind":11,"help":"","hidden":true,"returnType":2,"argCount":2,"args":[
             1,
+            2,
           ],"resourceVersion":"1.0","name":"ggpo_disconnect_player_raw","tags":[],"resourceType":"GMExtensionFunction",},
-        {"externalName":"ggpo_set_frame_delay_raw","kind":11,"help":"","hidden":true,"returnType":2,"argCount":1,"args":[
+        {"externalName":"ggpo_set_frame_delay_raw","kind":11,"help":"","hidden":true,"returnType":2,"argCount":2,"args":[
             1,
+            2,
           ],"resourceVersion":"1.0","name":"ggpo_set_frame_delay_raw","tags":[],"resourceType":"GMExtensionFunction",},
-        {"externalName":"ggpo_add_local_input_raw","kind":11,"help":"","hidden":true,"returnType":2,"argCount":1,"args":[
+        {"externalName":"ggpo_add_local_input_raw","kind":11,"help":"","hidden":true,"returnType":2,"argCount":2,"args":[
             1,
+            2,
           ],"resourceVersion":"1.0","name":"ggpo_add_local_input_raw","tags":[],"resourceType":"GMExtensionFunction",},
-        {"externalName":"ggpo_synchronize_input_raw","kind":11,"help":"","hidden":true,"returnType":2,"argCount":1,"args":[
+        {"externalName":"ggpo_synchronize_input_raw","kind":11,"help":"","hidden":true,"returnType":2,"argCount":2,"args":[
             1,
+            2,
           ],"resourceVersion":"1.0","name":"ggpo_synchronize_input_raw","tags":[],"resourceType":"GMExtensionFunction",},
-        {"externalName":"ggpo_preinit_2_raw","kind":11,"help":"","hidden":true,"returnType":2,"argCount":1,"args":[
+        {"externalName":"ggpo_preinit_2_raw","kind":11,"help":"","hidden":true,"returnType":2,"argCount":2,"args":[
             1,
+            2,
           ],"resourceVersion":"1.0","name":"ggpo_preinit_2_raw","tags":[],"resourceType":"GMExtensionFunction",},
-        {"externalName":"ggpo_do_network_send_packet_2","kind":11,"help":"","hidden":true,"returnType":1,"argCount":2,"args":[
+        {"externalName":"ggpo_do_network_send_packet_2","kind":11,"help":"","hidden":true,"returnType":2,"argCount":2,"args":[
             1,
             2,
           ],"resourceVersion":"1.0","name":"ggpo_do_network_send_packet_2","tags":[],"resourceType":"GMExtensionFunction",},
@@ -357,8 +401,9 @@
             2,
           ],"resourceVersion":"1.0","name":"ggpo_eventcode_get_name","tags":[],"resourceType":"GMExtensionFunction",},
         {"externalName":"ggpo_get_last_error","kind":1,"help":"ggpo_get_last_error()->ggpo_errorcode","hidden":false,"returnType":2,"argCount":0,"args":[],"resourceVersion":"1.0","name":"ggpo_get_last_error","tags":[],"resourceType":"GMExtensionFunction",},
-        {"externalName":"ggpo_preinit_1","kind":11,"help":"","hidden":true,"returnType":2,"argCount":1,"args":[
+        {"externalName":"ggpo_preinit_1","kind":11,"help":"","hidden":true,"returnType":2,"argCount":2,"args":[
             1,
+            2,
           ],"resourceVersion":"1.0","name":"ggpo_preinit_1","tags":[],"resourceType":"GMExtensionFunction",},
         {"externalName":"ggpo_errorcode_get_name","kind":11,"help":"","hidden":true,"returnType":1,"argCount":1,"args":[
             2,
@@ -366,15 +411,18 @@
         {"externalName":"ggpo_sleep","kind":11,"help":"","hidden":true,"returnType":2,"argCount":1,"args":[
             2,
           ],"resourceVersion":"1.0","name":"ggpo_sleep","tags":[],"resourceType":"GMExtensionFunction",},
-        {"externalName":"gml_ggpo_set_disconnect_timeout","kind":1,"help":"gml_ggpo_set_disconnect_timeout(timeout)->ggpo_errorcode","hidden":false,"returnType":2,"argCount":1,"args":[
+        {"externalName":"gml_ggpo_set_disconnect_timeout","kind":1,"help":"gml_ggpo_set_disconnect_timeout()->ggpo_errorcode","hidden":false,"returnType":2,"argCount":1,"args":[
             2,
           ],"resourceVersion":"1.0","name":"ggpo_set_disconnect_timeout","tags":[],"resourceType":"GMExtensionFunction",},
-        {"externalName":"gml_ggpo_set_disconnect_notify_start","kind":1,"help":"gml_ggpo_set_disconnect_notify_start(timeout)->ggpo_errorcode","hidden":false,"returnType":2,"argCount":1,"args":[
+        {"externalName":"gml_ggpo_set_disconnect_notify_start","kind":1,"help":"gml_ggpo_set_disconnect_notify_start()->ggpo_errorcode","hidden":false,"returnType":2,"argCount":1,"args":[
             2,
           ],"resourceVersion":"1.0","name":"ggpo_set_disconnect_notify_start","tags":[],"resourceType":"GMExtensionFunction",},
-        {"externalName":"ggpo_set_game_name","kind":11,"help":"","hidden":true,"returnType":1,"argCount":1,"args":[
+        {"externalName":"ggpo_set_game_name","kind":11,"help":"","hidden":true,"returnType":2,"argCount":1,"args":[
             1,
           ],"resourceVersion":"1.0","name":"ggpo_set_game_name","tags":[],"resourceType":"GMExtensionFunction",},
+        {"externalName":"ggpo_gml_fixed_buffer_set_wptr","kind":11,"help":"","hidden":true,"returnType":2,"argCount":1,"args":[
+            2,
+          ],"resourceVersion":"1.0","name":"ggpo_gml_fixed_buffer_set_wptr","tags":[],"resourceType":"GMExtensionFunction",},
       ],"constants":[
         {"value":"1024","hidden":false,"resourceVersion":"1.0","name":"ggpo_fixed_buffer_size","tags":[],"resourceType":"GMExtensionConstant",},
         {"value":"1000","hidden":false,"resourceVersion":"1.0","name":"ggpo_eventcode_connected_to_peer","tags":[],"resourceType":"GMExtensionConstant",},
@@ -400,7 +448,7 @@
         {"value":"10","hidden":false,"resourceVersion":"1.0","name":"ggpo_errorcode_too_many_spectators","tags":[],"resourceType":"GMExtensionConstant",},
         {"value":"11","hidden":false,"resourceVersion":"1.0","name":"ggpo_errorcode_invalid_request","tags":[],"resourceType":"GMExtensionConstant",},
       ],"ProxyFiles":[
-        {"TargetMask":6,"resourceVersion":"1.0","name":"ggpo_gml_x64.dll","tags":[],"resourceType":"GMProxyFile",},
+        {"name":"ggpo_gml_x64.dll","tags":[],"resourceVersion":"1.0","resourceType":"GMProxyFile","TargetMask":6,},
       ],"copyToTargets":2,"order":[
         {"name":"ggpo_do_game_state_save_3_raw","path":"extensions/ggpo_gml/ggpo_gml.yy",},
         {"name":"ggpo_idle_raw","path":"extensions/ggpo_gml/ggpo_gml.yy",},
@@ -427,84 +475,76 @@
         {"name":"ggpo_set_disconnect_timeout","path":"extensions/ggpo_gml/ggpo_gml.yy",},
         {"name":"ggpo_set_disconnect_notify_start","path":"extensions/ggpo_gml/ggpo_gml.yy",},
         {"name":"ggpo_set_game_name","path":"extensions/ggpo_gml/ggpo_gml.yy",},
-        {"name":"ggpo_do_game_state_save_3_raw","path":"extensions/ggpo_gml/ggpo_gml.yy",},
-        {"name":"ggpo_idle_raw","path":"extensions/ggpo_gml/ggpo_gml.yy",},
-        {"name":"ggpo_advance_frame_raw","path":"extensions/ggpo_gml/ggpo_gml.yy",},
-        {"name":"ggpo_player_is_active_raw","path":"extensions/ggpo_gml/ggpo_gml.yy",},
-        {"name":"ggpo_set_input_size_raw","path":"extensions/ggpo_gml/ggpo_gml.yy",},
-        {"name":"ggpo_start_session_raw","path":"extensions/ggpo_gml/ggpo_gml.yy",},
-        {"name":"ggpo_start_spectating_raw","path":"extensions/ggpo_gml/ggpo_gml.yy",},
-        {"name":"ggpo_start_synctest_raw","path":"extensions/ggpo_gml/ggpo_gml.yy",},
-        {"name":"ggpo_close_session_raw","path":"extensions/ggpo_gml/ggpo_gml.yy",},
-        {"name":"ggpo_add_local_player_raw","path":"extensions/ggpo_gml/ggpo_gml.yy",},
-        {"name":"ggpo_add_remote_player_raw","path":"extensions/ggpo_gml/ggpo_gml.yy",},
-        {"name":"ggpo_disconnect_player_raw","path":"extensions/ggpo_gml/ggpo_gml.yy",},
-        {"name":"ggpo_set_frame_delay_raw","path":"extensions/ggpo_gml/ggpo_gml.yy",},
-        {"name":"ggpo_add_local_input_raw","path":"extensions/ggpo_gml/ggpo_gml.yy",},
-        {"name":"ggpo_synchronize_input_raw","path":"extensions/ggpo_gml/ggpo_gml.yy",},
-        {"name":"ggpo_preinit_2_raw","path":"extensions/ggpo_gml/ggpo_gml.yy",},
-        {"name":"ggpo_do_network_send_packet_2","path":"extensions/ggpo_gml/ggpo_gml.yy",},
-        {"name":"ggpo_eventcode_get_name","path":"extensions/ggpo_gml/ggpo_gml.yy",},
-        {"name":"ggpo_get_last_error","path":"extensions/ggpo_gml/ggpo_gml.yy",},
-        {"name":"ggpo_preinit_1","path":"extensions/ggpo_gml/ggpo_gml.yy",},
-        {"name":"ggpo_errorcode_get_name","path":"extensions/ggpo_gml/ggpo_gml.yy",},
-        {"name":"ggpo_sleep","path":"extensions/ggpo_gml/ggpo_gml.yy",},
-        {"name":"ggpo_set_disconnect_timeout","path":"extensions/ggpo_gml/ggpo_gml.yy",},
-        {"name":"ggpo_set_disconnect_notify_start","path":"extensions/ggpo_gml/ggpo_gml.yy",},
-        {"name":"ggpo_set_game_name","path":"extensions/ggpo_gml/ggpo_gml.yy",},
+        {"name":"ggpo_gml_fixed_buffer_set_wptr","path":"extensions/ggpo_gml/ggpo_gml.yy",},
       ],"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMExtensionFile",},
     {"filename":"ggpo_gml.so","origname":"","init":"","final":"","kind":1,"uncompress":false,"functions":[
-        {"externalName":"ggpo_do_game_state_save_3_raw","kind":11,"help":"","hidden":true,"returnType":2,"argCount":1,"args":[
+        {"externalName":"ggpo_do_game_state_save_3_raw","kind":11,"help":"","hidden":true,"returnType":2,"argCount":2,"args":[
             1,
+            2,
           ],"resourceVersion":"1.0","name":"ggpo_do_game_state_save_3_raw","tags":[],"resourceType":"GMExtensionFunction",},
-        {"externalName":"ggpo_idle_raw","kind":11,"help":"","hidden":true,"returnType":2,"argCount":1,"args":[
+        {"externalName":"ggpo_idle_raw","kind":11,"help":"","hidden":true,"returnType":2,"argCount":2,"args":[
             1,
+            2,
           ],"resourceVersion":"1.0","name":"ggpo_idle_raw","tags":[],"resourceType":"GMExtensionFunction",},
-        {"externalName":"ggpo_advance_frame_raw","kind":11,"help":"","hidden":true,"returnType":2,"argCount":1,"args":[
+        {"externalName":"ggpo_advance_frame_raw","kind":11,"help":"","hidden":true,"returnType":2,"argCount":2,"args":[
             1,
+            2,
           ],"resourceVersion":"1.0","name":"ggpo_advance_frame_raw","tags":[],"resourceType":"GMExtensionFunction",},
-        {"externalName":"ggpo_player_is_active_raw","kind":11,"help":"","hidden":true,"returnType":2,"argCount":1,"args":[
+        {"externalName":"ggpo_player_is_active_raw","kind":11,"help":"","hidden":true,"returnType":2,"argCount":2,"args":[
             1,
+            2,
           ],"resourceVersion":"1.0","name":"ggpo_player_is_active_raw","tags":[],"resourceType":"GMExtensionFunction",},
-        {"externalName":"ggpo_set_input_size_raw","kind":11,"help":"","hidden":true,"returnType":2,"argCount":1,"args":[
+        {"externalName":"ggpo_set_input_size_raw","kind":11,"help":"","hidden":true,"returnType":2,"argCount":2,"args":[
             1,
+            2,
           ],"resourceVersion":"1.0","name":"ggpo_set_input_size_raw","tags":[],"resourceType":"GMExtensionFunction",},
-        {"externalName":"ggpo_start_session_raw","kind":11,"help":"","hidden":true,"returnType":2,"argCount":1,"args":[
+        {"externalName":"ggpo_start_session_raw","kind":11,"help":"","hidden":true,"returnType":2,"argCount":2,"args":[
             1,
+            2,
           ],"resourceVersion":"1.0","name":"ggpo_start_session_raw","tags":[],"resourceType":"GMExtensionFunction",},
-        {"externalName":"ggpo_start_spectating_raw","kind":11,"help":"","hidden":true,"returnType":2,"argCount":2,"args":[
+        {"externalName":"ggpo_start_spectating_raw","kind":11,"help":"","hidden":true,"returnType":2,"argCount":3,"args":[
             1,
+            2,
             1,
           ],"resourceVersion":"1.0","name":"ggpo_start_spectating_raw","tags":[],"resourceType":"GMExtensionFunction",},
-        {"externalName":"ggpo_start_synctest_raw","kind":11,"help":"","hidden":true,"returnType":2,"argCount":1,"args":[
+        {"externalName":"ggpo_start_synctest_raw","kind":11,"help":"","hidden":true,"returnType":2,"argCount":2,"args":[
             1,
+            2,
           ],"resourceVersion":"1.0","name":"ggpo_start_synctest_raw","tags":[],"resourceType":"GMExtensionFunction",},
-        {"externalName":"ggpo_close_session_raw","kind":11,"help":"","hidden":true,"returnType":2,"argCount":1,"args":[
+        {"externalName":"ggpo_close_session_raw","kind":11,"help":"","hidden":true,"returnType":2,"argCount":2,"args":[
             1,
+            2,
           ],"resourceVersion":"1.0","name":"ggpo_close_session_raw","tags":[],"resourceType":"GMExtensionFunction",},
-        {"externalName":"ggpo_add_local_player_raw","kind":11,"help":"","hidden":true,"returnType":2,"argCount":1,"args":[
+        {"externalName":"ggpo_add_local_player_raw","kind":11,"help":"","hidden":true,"returnType":2,"argCount":2,"args":[
             1,
+            2,
           ],"resourceVersion":"1.0","name":"ggpo_add_local_player_raw","tags":[],"resourceType":"GMExtensionFunction",},
-        {"externalName":"ggpo_add_remote_player_raw","kind":11,"help":"","hidden":true,"returnType":2,"argCount":2,"args":[
+        {"externalName":"ggpo_add_remote_player_raw","kind":11,"help":"","hidden":true,"returnType":2,"argCount":3,"args":[
             1,
+            2,
             1,
           ],"resourceVersion":"1.0","name":"ggpo_add_remote_player_raw","tags":[],"resourceType":"GMExtensionFunction",},
-        {"externalName":"ggpo_disconnect_player_raw","kind":11,"help":"","hidden":true,"returnType":2,"argCount":1,"args":[
+        {"externalName":"ggpo_disconnect_player_raw","kind":11,"help":"","hidden":true,"returnType":2,"argCount":2,"args":[
             1,
+            2,
           ],"resourceVersion":"1.0","name":"ggpo_disconnect_player_raw","tags":[],"resourceType":"GMExtensionFunction",},
-        {"externalName":"ggpo_set_frame_delay_raw","kind":11,"help":"","hidden":true,"returnType":2,"argCount":1,"args":[
+        {"externalName":"ggpo_set_frame_delay_raw","kind":11,"help":"","hidden":true,"returnType":2,"argCount":2,"args":[
             1,
+            2,
           ],"resourceVersion":"1.0","name":"ggpo_set_frame_delay_raw","tags":[],"resourceType":"GMExtensionFunction",},
-        {"externalName":"ggpo_add_local_input_raw","kind":11,"help":"","hidden":true,"returnType":2,"argCount":1,"args":[
+        {"externalName":"ggpo_add_local_input_raw","kind":11,"help":"","hidden":true,"returnType":2,"argCount":2,"args":[
             1,
+            2,
           ],"resourceVersion":"1.0","name":"ggpo_add_local_input_raw","tags":[],"resourceType":"GMExtensionFunction",},
-        {"externalName":"ggpo_synchronize_input_raw","kind":11,"help":"","hidden":true,"returnType":2,"argCount":1,"args":[
+        {"externalName":"ggpo_synchronize_input_raw","kind":11,"help":"","hidden":true,"returnType":2,"argCount":2,"args":[
             1,
+            2,
           ],"resourceVersion":"1.0","name":"ggpo_synchronize_input_raw","tags":[],"resourceType":"GMExtensionFunction",},
-        {"externalName":"ggpo_preinit_2_raw","kind":11,"help":"","hidden":true,"returnType":2,"argCount":1,"args":[
+        {"externalName":"ggpo_preinit_2_raw","kind":11,"help":"","hidden":true,"returnType":2,"argCount":2,"args":[
             1,
+            2,
           ],"resourceVersion":"1.0","name":"ggpo_preinit_2_raw","tags":[],"resourceType":"GMExtensionFunction",},
-        {"externalName":"ggpo_do_network_send_packet_2","kind":11,"help":"","hidden":true,"returnType":1,"argCount":2,"args":[
+        {"externalName":"ggpo_do_network_send_packet_2","kind":11,"help":"","hidden":true,"returnType":2,"argCount":2,"args":[
             1,
             2,
           ],"resourceVersion":"1.0","name":"ggpo_do_network_send_packet_2","tags":[],"resourceType":"GMExtensionFunction",},
@@ -512,8 +552,9 @@
             2,
           ],"resourceVersion":"1.0","name":"ggpo_eventcode_get_name","tags":[],"resourceType":"GMExtensionFunction",},
         {"externalName":"ggpo_get_last_error","kind":1,"help":"ggpo_get_last_error()->ggpo_errorcode","hidden":false,"returnType":2,"argCount":0,"args":[],"resourceVersion":"1.0","name":"ggpo_get_last_error","tags":[],"resourceType":"GMExtensionFunction",},
-        {"externalName":"ggpo_preinit_1","kind":11,"help":"","hidden":true,"returnType":2,"argCount":1,"args":[
+        {"externalName":"ggpo_preinit_1","kind":11,"help":"","hidden":true,"returnType":2,"argCount":2,"args":[
             1,
+            2,
           ],"resourceVersion":"1.0","name":"ggpo_preinit_1","tags":[],"resourceType":"GMExtensionFunction",},
         {"externalName":"ggpo_errorcode_get_name","kind":11,"help":"","hidden":true,"returnType":1,"argCount":1,"args":[
             2,
@@ -521,15 +562,18 @@
         {"externalName":"ggpo_sleep","kind":11,"help":"","hidden":true,"returnType":2,"argCount":1,"args":[
             2,
           ],"resourceVersion":"1.0","name":"ggpo_sleep","tags":[],"resourceType":"GMExtensionFunction",},
-        {"externalName":"gml_ggpo_set_disconnect_timeout","kind":1,"help":"gml_ggpo_set_disconnect_timeout(timeout)->ggpo_errorcode","hidden":false,"returnType":2,"argCount":1,"args":[
+        {"externalName":"gml_ggpo_set_disconnect_timeout","kind":1,"help":"gml_ggpo_set_disconnect_timeout()->ggpo_errorcode","hidden":false,"returnType":2,"argCount":1,"args":[
             2,
           ],"resourceVersion":"1.0","name":"ggpo_set_disconnect_timeout","tags":[],"resourceType":"GMExtensionFunction",},
-        {"externalName":"gml_ggpo_set_disconnect_notify_start","kind":1,"help":"gml_ggpo_set_disconnect_notify_start(timeout)->ggpo_errorcode","hidden":false,"returnType":2,"argCount":1,"args":[
+        {"externalName":"gml_ggpo_set_disconnect_notify_start","kind":1,"help":"gml_ggpo_set_disconnect_notify_start()->ggpo_errorcode","hidden":false,"returnType":2,"argCount":1,"args":[
             2,
           ],"resourceVersion":"1.0","name":"ggpo_set_disconnect_notify_start","tags":[],"resourceType":"GMExtensionFunction",},
-        {"externalName":"ggpo_set_game_name","kind":11,"help":"","hidden":true,"returnType":1,"argCount":1,"args":[
+        {"externalName":"ggpo_set_game_name","kind":11,"help":"","hidden":true,"returnType":2,"argCount":1,"args":[
             1,
           ],"resourceVersion":"1.0","name":"ggpo_set_game_name","tags":[],"resourceType":"GMExtensionFunction",},
+        {"externalName":"ggpo_gml_fixed_buffer_set_wptr","kind":11,"help":"","hidden":true,"returnType":2,"argCount":1,"args":[
+            2,
+          ],"resourceVersion":"1.0","name":"ggpo_gml_fixed_buffer_set_wptr","tags":[],"resourceType":"GMExtensionFunction",},
       ],"constants":[
         {"value":"1024","hidden":false,"resourceVersion":"1.0","name":"ggpo_fixed_buffer_size","tags":[],"resourceType":"GMExtensionConstant",},
         {"value":"1000","hidden":false,"resourceVersion":"1.0","name":"ggpo_eventcode_connected_to_peer","tags":[],"resourceType":"GMExtensionConstant",},
@@ -555,7 +599,7 @@
         {"value":"10","hidden":false,"resourceVersion":"1.0","name":"ggpo_errorcode_too_many_spectators","tags":[],"resourceType":"GMExtensionConstant",},
         {"value":"11","hidden":false,"resourceVersion":"1.0","name":"ggpo_errorcode_invalid_request","tags":[],"resourceType":"GMExtensionConstant",},
       ],"ProxyFiles":[
-        {"TargetMask":6,"resourceVersion":"1.0","name":"ggpo_gml_x64.dll","tags":[],"resourceType":"GMProxyFile",},
+        {"name":"ggpo_gml_x64.dll","tags":[],"resourceVersion":"1.0","resourceType":"GMProxyFile","TargetMask":6,},
       ],"copyToTargets":128,"order":[
         {"name":"ggpo_do_game_state_save_3_raw","path":"extensions/ggpo_gml/ggpo_gml.yy",},
         {"name":"ggpo_idle_raw","path":"extensions/ggpo_gml/ggpo_gml.yy",},
@@ -582,6 +626,130 @@
         {"name":"ggpo_set_disconnect_timeout","path":"extensions/ggpo_gml/ggpo_gml.yy",},
         {"name":"ggpo_set_disconnect_notify_start","path":"extensions/ggpo_gml/ggpo_gml.yy",},
         {"name":"ggpo_set_game_name","path":"extensions/ggpo_gml/ggpo_gml.yy",},
+        {"name":"ggpo_gml_fixed_buffer_set_wptr","path":"extensions/ggpo_gml/ggpo_gml.yy",},
+      ],"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMExtensionFile",},
+    {"filename":"ggpo_gml_wasm.js","origname":"","init":"","final":"","kind":5,"uncompress":false,"functions":[
+        {"externalName":"_ggpo_do_game_state_save_3_raw","kind":11,"help":"","hidden":true,"returnType":2,"argCount":2,"args":[
+            1,
+            2,
+          ],"resourceVersion":"1.0","name":"ggpo_do_game_state_save_3_raw","tags":[],"resourceType":"GMExtensionFunction",},
+        {"externalName":"_ggpo_idle_raw","kind":11,"help":"","hidden":true,"returnType":2,"argCount":2,"args":[
+            1,
+            2,
+          ],"resourceVersion":"1.0","name":"ggpo_idle_raw","tags":[],"resourceType":"GMExtensionFunction",},
+        {"externalName":"_ggpo_advance_frame_raw","kind":11,"help":"","hidden":true,"returnType":2,"argCount":2,"args":[
+            1,
+            2,
+          ],"resourceVersion":"1.0","name":"ggpo_advance_frame_raw","tags":[],"resourceType":"GMExtensionFunction",},
+        {"externalName":"_ggpo_player_is_active_raw","kind":11,"help":"","hidden":true,"returnType":2,"argCount":2,"args":[
+            1,
+            2,
+          ],"resourceVersion":"1.0","name":"ggpo_player_is_active_raw","tags":[],"resourceType":"GMExtensionFunction",},
+        {"externalName":"_ggpo_set_input_size_raw","kind":11,"help":"","hidden":true,"returnType":2,"argCount":2,"args":[
+            1,
+            2,
+          ],"resourceVersion":"1.0","name":"ggpo_set_input_size_raw","tags":[],"resourceType":"GMExtensionFunction",},
+        {"externalName":"_ggpo_start_session_raw","kind":11,"help":"","hidden":true,"returnType":2,"argCount":2,"args":[
+            1,
+            2,
+          ],"resourceVersion":"1.0","name":"ggpo_start_session_raw","tags":[],"resourceType":"GMExtensionFunction",},
+        {"externalName":"_ggpo_start_spectating_raw","kind":11,"help":"","hidden":true,"returnType":2,"argCount":3,"args":[
+            1,
+            2,
+            1,
+          ],"resourceVersion":"1.0","name":"ggpo_start_spectating_raw","tags":[],"resourceType":"GMExtensionFunction",},
+        {"externalName":"_ggpo_start_synctest_raw","kind":11,"help":"","hidden":true,"returnType":2,"argCount":2,"args":[
+            1,
+            2,
+          ],"resourceVersion":"1.0","name":"ggpo_start_synctest_raw","tags":[],"resourceType":"GMExtensionFunction",},
+        {"externalName":"_ggpo_close_session_raw","kind":11,"help":"","hidden":true,"returnType":2,"argCount":2,"args":[
+            1,
+            2,
+          ],"resourceVersion":"1.0","name":"ggpo_close_session_raw","tags":[],"resourceType":"GMExtensionFunction",},
+        {"externalName":"_ggpo_add_local_player_raw","kind":11,"help":"","hidden":true,"returnType":2,"argCount":2,"args":[
+            1,
+            2,
+          ],"resourceVersion":"1.0","name":"ggpo_add_local_player_raw","tags":[],"resourceType":"GMExtensionFunction",},
+        {"externalName":"_ggpo_add_remote_player_raw","kind":11,"help":"","hidden":true,"returnType":2,"argCount":3,"args":[
+            1,
+            2,
+            1,
+          ],"resourceVersion":"1.0","name":"ggpo_add_remote_player_raw","tags":[],"resourceType":"GMExtensionFunction",},
+        {"externalName":"_ggpo_disconnect_player_raw","kind":11,"help":"","hidden":true,"returnType":2,"argCount":2,"args":[
+            1,
+            2,
+          ],"resourceVersion":"1.0","name":"ggpo_disconnect_player_raw","tags":[],"resourceType":"GMExtensionFunction",},
+        {"externalName":"_ggpo_set_frame_delay_raw","kind":11,"help":"","hidden":true,"returnType":2,"argCount":2,"args":[
+            1,
+            2,
+          ],"resourceVersion":"1.0","name":"ggpo_set_frame_delay_raw","tags":[],"resourceType":"GMExtensionFunction",},
+        {"externalName":"_ggpo_add_local_input_raw","kind":11,"help":"","hidden":true,"returnType":2,"argCount":2,"args":[
+            1,
+            2,
+          ],"resourceVersion":"1.0","name":"ggpo_add_local_input_raw","tags":[],"resourceType":"GMExtensionFunction",},
+        {"externalName":"_ggpo_synchronize_input_raw","kind":11,"help":"","hidden":true,"returnType":2,"argCount":2,"args":[
+            1,
+            2,
+          ],"resourceVersion":"1.0","name":"ggpo_synchronize_input_raw","tags":[],"resourceType":"GMExtensionFunction",},
+        {"externalName":"_ggpo_preinit_2_raw","kind":11,"help":"","hidden":true,"returnType":2,"argCount":2,"args":[
+            1,
+            2,
+          ],"resourceVersion":"1.0","name":"ggpo_preinit_2_raw","tags":[],"resourceType":"GMExtensionFunction",},
+        {"externalName":"_ggpo_do_network_send_packet_2","kind":11,"help":"","hidden":true,"returnType":2,"argCount":2,"args":[
+            1,
+            2,
+          ],"resourceVersion":"1.0","name":"ggpo_do_network_send_packet_2","tags":[],"resourceType":"GMExtensionFunction",},
+        {"externalName":"_ggpo_eventcode_get_name","kind":11,"help":"","hidden":true,"returnType":1,"argCount":1,"args":[
+            2,
+          ],"resourceVersion":"1.0","name":"ggpo_eventcode_get_name","tags":[],"resourceType":"GMExtensionFunction",},
+        {"externalName":"_ggpo_get_last_error","kind":1,"help":"ggpo_get_last_error()->ggpo_errorcode","hidden":false,"returnType":2,"argCount":0,"args":[],"resourceVersion":"1.0","name":"ggpo_get_last_error","tags":[],"resourceType":"GMExtensionFunction",},
+        {"externalName":"_ggpo_preinit_1","kind":11,"help":"","hidden":true,"returnType":2,"argCount":2,"args":[
+            1,
+            2,
+          ],"resourceVersion":"1.0","name":"ggpo_preinit_1","tags":[],"resourceType":"GMExtensionFunction",},
+        {"externalName":"_ggpo_errorcode_get_name","kind":11,"help":"","hidden":true,"returnType":1,"argCount":1,"args":[
+            2,
+          ],"resourceVersion":"1.0","name":"ggpo_errorcode_get_name","tags":[],"resourceType":"GMExtensionFunction",},
+        {"externalName":"_ggpo_sleep","kind":11,"help":"","hidden":true,"returnType":2,"argCount":1,"args":[
+            2,
+          ],"resourceVersion":"1.0","name":"ggpo_sleep","tags":[],"resourceType":"GMExtensionFunction",},
+        {"externalName":"_gml_ggpo_set_disconnect_timeout","kind":1,"help":"gml_ggpo_set_disconnect_timeout()->ggpo_errorcode","hidden":false,"returnType":2,"argCount":1,"args":[
+            2,
+          ],"resourceVersion":"1.0","name":"ggpo_set_disconnect_timeout","tags":[],"resourceType":"GMExtensionFunction",},
+        {"externalName":"_gml_ggpo_set_disconnect_notify_start","kind":1,"help":"gml_ggpo_set_disconnect_notify_start()->ggpo_errorcode","hidden":false,"returnType":2,"argCount":1,"args":[
+            2,
+          ],"resourceVersion":"1.0","name":"ggpo_set_disconnect_notify_start","tags":[],"resourceType":"GMExtensionFunction",},
+        {"externalName":"_ggpo_set_game_name","kind":11,"help":"","hidden":true,"returnType":2,"argCount":1,"args":[
+            1,
+          ],"resourceVersion":"1.0","name":"ggpo_set_game_name","tags":[],"resourceType":"GMExtensionFunction",},
+        {"externalName":"_ggpo_gml_fixed_buffer_set_wptr","kind":11,"help":"","hidden":true,"returnType":2,"argCount":1,"args":[
+            2,
+          ],"resourceVersion":"1.0","name":"ggpo_gml_fixed_buffer_set_wptr","tags":[],"resourceType":"GMExtensionFunction",},
+      ],"constants":[
+        {"value":"1024","hidden":false,"resourceVersion":"1.0","name":"ggpo_fixed_buffer_size","tags":[],"resourceType":"GMExtensionConstant",},
+        {"value":"1000","hidden":false,"resourceVersion":"1.0","name":"ggpo_eventcode_connected_to_peer","tags":[],"resourceType":"GMExtensionConstant",},
+        {"value":"1001","hidden":false,"resourceVersion":"1.0","name":"ggpo_eventcode_synchronizing_with_peer","tags":[],"resourceType":"GMExtensionConstant",},
+        {"value":"1002","hidden":false,"resourceVersion":"1.0","name":"ggpo_eventcode_synchronized_with_peer","tags":[],"resourceType":"GMExtensionConstant",},
+        {"value":"1003","hidden":false,"resourceVersion":"1.0","name":"ggpo_eventcode_running","tags":[],"resourceType":"GMExtensionConstant",},
+        {"value":"1004","hidden":false,"resourceVersion":"1.0","name":"ggpo_eventcode_disconnected_from_peer","tags":[],"resourceType":"GMExtensionConstant",},
+        {"value":"1005","hidden":false,"resourceVersion":"1.0","name":"ggpo_eventcode_timesync","tags":[],"resourceType":"GMExtensionConstant",},
+        {"value":"1006","hidden":false,"resourceVersion":"1.0","name":"ggpo_eventcode_connection_interrupted","tags":[],"resourceType":"GMExtensionConstant",},
+        {"value":"1007","hidden":false,"resourceVersion":"1.0","name":"ggpo_eventcode_connection_resumed","tags":[],"resourceType":"GMExtensionConstant",},
+        {"value":"0","hidden":false,"resourceVersion":"1.0","name":"ggpo_ok","tags":[],"resourceType":"GMExtensionConstant",},
+        {"value":"0","hidden":false,"resourceVersion":"1.0","name":"ggpo_errorcode_success","tags":[],"resourceType":"GMExtensionConstant",},
+        {"value":"-1","hidden":false,"resourceVersion":"1.0","name":"ggpo_errorcode_general_failure","tags":[],"resourceType":"GMExtensionConstant",},
+        {"value":"1","hidden":false,"resourceVersion":"1.0","name":"ggpo_errorcode_invalid_session","tags":[],"resourceType":"GMExtensionConstant",},
+        {"value":"2","hidden":false,"resourceVersion":"1.0","name":"ggpo_errorcode_invalid_player_handle","tags":[],"resourceType":"GMExtensionConstant",},
+        {"value":"3","hidden":false,"resourceVersion":"1.0","name":"ggpo_errorcode_player_out_of_range","tags":[],"resourceType":"GMExtensionConstant",},
+        {"value":"4","hidden":false,"resourceVersion":"1.0","name":"ggpo_errorcode_prediction_threshold","tags":[],"resourceType":"GMExtensionConstant",},
+        {"value":"5","hidden":false,"resourceVersion":"1.0","name":"ggpo_errorcode_unsupported","tags":[],"resourceType":"GMExtensionConstant",},
+        {"value":"6","hidden":false,"resourceVersion":"1.0","name":"ggpo_errorcode_not_synchronized","tags":[],"resourceType":"GMExtensionConstant",},
+        {"value":"7","hidden":false,"resourceVersion":"1.0","name":"ggpo_errorcode_in_rollback","tags":[],"resourceType":"GMExtensionConstant",},
+        {"value":"8","hidden":false,"resourceVersion":"1.0","name":"ggpo_errorcode_input_dropped","tags":[],"resourceType":"GMExtensionConstant",},
+        {"value":"9","hidden":false,"resourceVersion":"1.0","name":"ggpo_errorcode_player_disconnected","tags":[],"resourceType":"GMExtensionConstant",},
+        {"value":"10","hidden":false,"resourceVersion":"1.0","name":"ggpo_errorcode_too_many_spectators","tags":[],"resourceType":"GMExtensionConstant",},
+        {"value":"11","hidden":false,"resourceVersion":"1.0","name":"ggpo_errorcode_invalid_request","tags":[],"resourceType":"GMExtensionConstant",},
+      ],"ProxyFiles":[],"copyToTargets":32,"order":[
         {"name":"ggpo_do_game_state_save_3_raw","path":"extensions/ggpo_gml/ggpo_gml.yy",},
         {"name":"ggpo_idle_raw","path":"extensions/ggpo_gml/ggpo_gml.yy",},
         {"name":"ggpo_advance_frame_raw","path":"extensions/ggpo_gml/ggpo_gml.yy",},
@@ -607,6 +775,56 @@
         {"name":"ggpo_set_disconnect_timeout","path":"extensions/ggpo_gml/ggpo_gml.yy",},
         {"name":"ggpo_set_disconnect_notify_start","path":"extensions/ggpo_gml/ggpo_gml.yy",},
         {"name":"ggpo_set_game_name","path":"extensions/ggpo_gml/ggpo_gml.yy",},
+        {"name":"ggpo_gml_fixed_buffer_set_wptr","path":"extensions/ggpo_gml/ggpo_gml.yy",},
+      ],"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMExtensionFile",},
+    {"filename":"ggpo_gml.js","origname":"","init":"","final":"","kind":5,"uncompress":false,"functions":[
+        {"externalName":"ggpo_gml_is_ready","kind":5,"help":"ggpo_gml_is_ready()","hidden":false,"returnType":2,"argCount":0,"args":[],"resourceVersion":"1.0","name":"ggpo_gml_is_ready","tags":[],"resourceType":"GMExtensionFunction",},
+        {"externalName":"ggpo_gml_wasm_alloc","kind":5,"help":"ggpo_gml_wasm_alloc(size, in_abuf)","hidden":false,"returnType":2,"argCount":2,"args":[
+            2,
+            2,
+          ],"resourceVersion":"1.0","name":"ggpo_gml_wasm_alloc","tags":[],"resourceType":"GMExtensionFunction",},
+        {"externalName":"ggpo_gml_wasm_free","kind":5,"help":"ggpo_gml_wasm_free(wptr, out_abuf, out_size)","hidden":false,"returnType":2,"argCount":3,"args":[
+            2,
+            2,
+            2,
+          ],"resourceVersion":"1.0","name":"ggpo_gml_wasm_free","tags":[],"resourceType":"GMExtensionFunction",},
+        {"externalName":"ggpo_gml_wasm_init_fixed_buffer","kind":5,"help":"ggpo_gml_wasm_init_fixed_buffer(abuf, size)","hidden":false,"returnType":2,"argCount":2,"args":[
+            2,
+            2,
+          ],"resourceVersion":"1.0","name":"ggpo_gml_wasm_init_fixed_buffer","tags":[],"resourceType":"GMExtensionFunction",},
+        {"externalName":"ggpo_gml_wasm_get_fixed_buffer","kind":5,"help":"ggpo_gml_wasm_get_fixed_buffer()","hidden":false,"returnType":2,"argCount":0,"args":[],"resourceVersion":"1.0","name":"ggpo_gml_wasm_get_fixed_buffer","tags":[],"resourceType":"GMExtensionFunction",},
+        {"externalName":"ggpo_gml_wasm_set_fixed_buffer","kind":5,"help":"ggpo_gml_wasm_set_fixed_buffer()","hidden":false,"returnType":2,"argCount":0,"args":[],"resourceVersion":"1.0","name":"ggpo_gml_wasm_set_fixed_buffer","tags":[],"resourceType":"GMExtensionFunction",},
+        {"externalName":"ggpo_gml_wasm_exec_init","kind":5,"help":"ggpo_gml_wasm_exec_init(fn)","hidden":false,"returnType":2,"argCount":1,"args":[
+            2,
+          ],"resourceVersion":"1.0","name":"ggpo_gml_wasm_exec_init","tags":[],"resourceType":"GMExtensionFunction",},
+        {"externalName":"ggpo_gml_wasm_exec","kind":5,"help":"ggpo_gml_wasm_exec(_0, _1, _2, _3, _4, _5, _6, _7)","hidden":false,"returnType":2,"argCount":8,"args":[
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+          ],"resourceVersion":"1.0","name":"ggpo_gml_wasm_exec","tags":[],"resourceType":"GMExtensionFunction",},
+      ],"constants":[
+        
+      ],"ProxyFiles":[],"copyToTargets":32,"order":[
+        {"name":"ggpo_gml_is_ready","path":"extensions/ggpo_gml/ggpo_gml.yy",},
+        {"name":"ggpo_gml_wasm_alloc","path":"extensions/ggpo_gml/ggpo_gml.yy",},
+        {"name":"ggpo_gml_wasm_free","path":"extensions/ggpo_gml/ggpo_gml.yy",},
+        {"name":"ggpo_gml_wasm_init_fixed_buffer","path":"extensions/ggpo_gml/ggpo_gml.yy",},
+        {"name":"ggpo_gml_wasm_get_fixed_buffer","path":"extensions/ggpo_gml/ggpo_gml.yy",},
+        {"name":"ggpo_gml_wasm_set_fixed_buffer","path":"extensions/ggpo_gml/ggpo_gml.yy",},
+        {"name":"ggpo_gml_wasm_exec_init","path":"extensions/ggpo_gml/ggpo_gml.yy",},
+        {"name":"ggpo_gml_wasm_exec","path":"extensions/ggpo_gml/ggpo_gml.yy",},
+      ],"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMExtensionFile",},
+    {"filename":"ggpo_gml_wasm_autogen.js","origname":"","init":"","final":"","kind":5,"uncompress":false,"functions":[
+        {"externalName":"ggpo_gml_wasm_autowrap","kind":5,"help":"ggpo_gml_wasm_autowrap()","hidden":false,"returnType":2,"argCount":0,"args":[],"resourceVersion":"1.0","name":"ggpo_gml_wasm_autowrap","tags":[],"resourceType":"GMExtensionFunction",},
+      ],"constants":[
+        
+      ],"ProxyFiles":[],"copyToTargets":-1,"order":[
+        {"name":"ggpo_gml_wasm_autowrap","path":"extensions/ggpo_gml/ggpo_gml.yy",},
       ],"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMExtensionFile",},
   ],
   "classname": "",

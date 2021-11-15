@@ -42,6 +42,8 @@
 */extensions/*/*.cpp
 */extensions/*/*.dll
 */datafiles/ggpo_gml.html
+*/datafiles/ggpo_gml_wasm.js
+*/datafiles/ggpo_gml_wasm.wasm
 
 */Debug/
 */Release/

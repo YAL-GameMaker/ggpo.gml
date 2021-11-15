@@ -31,10 +31,12 @@ void Logv(const char *fmt, va_list args)
    if (!Platform::GetConfigBool("ggpo.log") || Platform::GetConfigBool("ggpo.log.ignore")) {
       return;
    }
+   #ifndef WASM
    if (!logfile) {
       snprintf(logbuf, ARRAY_SIZE(logbuf), "log-%d.log", Platform::GetProcessID());
       logfile = fopen(logbuf, "w");
    }
+   #endif
    Logv(logfile, fmt, args);
 }
 
@@ -48,12 +50,20 @@ void Logv(FILE *fp, const char *fmt, va_list args)
       } else {
          t = Platform::GetCurrentTimeMS() - start;
       }
+      #ifdef WASM
+      printf("%d.%03d : ", t / 1000, t % 1000);
+      #else
       fprintf(fp, "%d.%03d : ", t / 1000, t % 1000);
+      #endif
    }
 
+   #ifdef WASM
+   vprintf(fmt, args);
+   #else
    vfprintf(fp, fmt, args);
    fflush(fp);
    
    vsnprintf(logbuf, ARRAY_SIZE(logbuf), fmt, args);
+   #endif
 }
 

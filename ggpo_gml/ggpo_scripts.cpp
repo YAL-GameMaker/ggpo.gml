@@ -35,3 +35,11 @@ dllg int ggpo_preinit_2(
 	X(ggpo_do_network_receive_packet);
 	return 1;
 }
+
+dllx void ggpo_gml_fixed_buffer_set_wptr(double wptr) {
+	#ifdef WASM
+	ggpo_fixed_buffer = (uint8_t*)(int32_t)wptr;
+	#else
+	trace("Don't call ggpo_fixed_buffer_set_wptr in native builds.");
+	#endif
+}

@@ -155,7 +155,7 @@ struct gml_script_id {
 	}
 
 	int i(int _default = 0);
-	int64_t l(int64_t _default = 0);
+	//int64_t l(int64_t _default = 0);
 
 	int ii(int arg0, int _default = 0);
 	int li(int64_t arg0, int _default = 0);

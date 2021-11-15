@@ -1,6 +1,11 @@
 var _fork = global.__test_mode
 if (_fork == undefined) _fork = parameter_string(parameter_count() - 1) == "-fork";
 
+if (true) {
+    ggpo_websocket_test();
+    _fork = ggpo_gml_is_js;
+}
+
 //global.__ggpo_default_verbose = true;
 window_set_caption("ggpo " + (_fork ? "client" : "server"))
 //show_message("?" + string(_fork));

@@ -13,6 +13,9 @@ using namespace std;
 
 #if defined(WIN32)
 #define dllx extern "C" __declspec(dllexport)
+#elif defined(WASM)
+#include <emscripten.h>
+#define dllx extern "C" EMSCRIPTEN_KEEPALIVE
 #elif defined(GNUC)
 #define dllx extern "C" __attribute__ ((visibility("default"))) 
 #else

@@ -15,13 +15,16 @@ dllx double ggpo_get_last_error() {
 	return ggpoLastError;
 }
 
-dllx double ggpo_preinit_1(GMLClosure* _script_execute) {
+dllx double ggpo_preinit_1(GMLClosure* _script_execute, double _script_execute_size_dummy) {
 	#ifndef GML_SOCKETS
 	WSADATA wd = { 0 };
 	WSAStartup(MAKEWORD(2, 2), &wd);
 	#endif
+	
+	#ifndef WASM
 	script_execute::self = _script_execute;
 	script_execute::raw = _script_execute->m_cppFunc;
+	#endif
 	return 1;
 }
 

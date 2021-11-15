@@ -79,6 +79,6 @@ dllg int ggpo_add_local_input(int player_handle, gml_buffer buf, std::optional<i
 	return ggpo_add_local_input(ggpo, player_handle, buf.data(), _size);
 }
 
-dllg int ggpo_synchronize_input(gml_buffer buf) {
-	return ggpo_synchronize_input(ggpo, buf.data(), buf.size(), &ggpo_disconnect_flags);
+dllg int ggpo_synchronize_input(gml_buffer out_buffer) {
+	return ggpo_synchronize_input(ggpo, out_buffer.data(), out_buffer.size(), &ggpo_disconnect_flags);
 }

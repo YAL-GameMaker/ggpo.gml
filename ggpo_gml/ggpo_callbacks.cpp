@@ -42,8 +42,8 @@ bool ggpo_do_game_state_dump_1(char* filename, uint8_t* buffer, int len) {
 }
 
 void* ggpo_do_network_send_packet_data;
-dllx void ggpo_do_network_send_packet_2(uint8_t* buffer, double len) {
-	memcpy(buffer, ggpo_do_network_send_packet_data, (size_t)(int)len);
+dllx void ggpo_do_network_send_packet_2(uint8_t* out_buffer, double out_buffer_len) {
+	memcpy(out_buffer, ggpo_do_network_send_packet_data, (size_t)(int)out_buffer_len);
 }
 
 ///

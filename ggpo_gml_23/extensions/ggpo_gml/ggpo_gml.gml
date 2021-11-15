@@ -1,11 +1,24 @@
 #define ggpo_preinit
-//show_message("?");
+//#global ggpo_gml_is_js
+var _js = (os_browser != browser_not_a_browser);
+ggpo_gml_is_js = _js;
+
+// on JS, we have to wait until the WASM blob is loaded...
+if (!_js) gmcallback_ggpo_preinit();
+
+#define gmcallback_ggpo_preinit
+var _js = ggpo_gml_is_js;
 global.__ggpo_script_execute = method(undefined, script_execute);
-global.__ggpo_script_execute_ptr = ptr(global.__ggpo_script_execute);
-global.__ggpo_fixed_buffer = buffer_create(1024, buffer_fixed, 1);
-switch (ggpo_preinit_1(global.__ggpo_script_execute_ptr)) {
+global.__ggpo_script_execute_ptr = _js ? undefined : ptr(global.__ggpo_script_execute);
+global.__ggpo_fixed_buffer = buffer_create(ggpo_fixed_buffer_size, buffer_fixed, 1);
+switch (ggpo_preinit_1(global.__ggpo_script_execute_ptr, 256)) {
     case 1:
-        ggpo_preinit_2(global.__ggpo_fixed_buffer);
+        ggpo_preinit_2(_js ? -1 : global.__ggpo_fixed_buffer);
+        if (_js) {
+            ggpo_gml_wasm_exec_init(global.__ggpo_script_execute);
+            ggpo_gml_wasm_init_fixed_buffer(buffer_get_address(global.__ggpo_fixed_buffer), ggpo_fixed_buffer_size);
+            if (!_js) gmcallback_ggpo_gml_script_execute(0, 0, 0, 0, 0, 0, 0, 0);
+        }
         show_debug_message("GGPO native extension loaded!");
         break;
     default:
@@ -72,7 +85,10 @@ if (global.__ggpo_default_verbose) show_debug_message({ func: "ggpo_default_netw
 for (var _port = _bind_port; _port <= _bind_port + _retries; _port++) {
     var _socket = network_create_socket_ext(network_socket_udp, _port);
     if (global.__ggpo_default_verbose) show_debug_message("Socket OK! Port: " + string(_port));
-    if (_socket >= 0) return _socket;
+    if (_socket >= 0) {
+        global.__ggpo_default_packet_queue[?_socket] = ds_queue_create();
+        return _socket;
+    }
 }
 if (global.__ggpo_default_verbose) show_debug_message("Failed to bind a socket!");
 return -1;
@@ -107,14 +123,12 @@ ggpo_network_packet_receive(_packet[0], _packet[1], _packet[2], _packet[3]);
 ds_queue_enqueue(global.__ggpo_default_packet_pool, _packet[2]); // GML isn't multi-threaded so no one's going to write anything to this before we return
 
 #define ggpo_default_async_network
-/// ()
-var _e/*:async_load_network*/ = /*#cast*/ async_load;
+/// (?async_load)
+var _e/*:async_load_network*/ = argument_count > 0 ? argument[0] : /*#cast*/ async_load;
+if (_e[?"type"] != network_type_data) exit;
 var _socket = _e[?"id"];
 var _queue = global.__ggpo_default_packet_queue[?_socket];
-if (_queue == undefined) {
-    _queue = ds_queue_create();
-    global.__ggpo_default_packet_queue[?_socket] = _queue;
-}
+if (_queue == undefined) exit;
 var _size = _e[?"size"];
 var _buf/*:buffer*/;
 if (ds_queue_empty(global.__ggpo_default_packet_pool)) {
@@ -131,13 +145,28 @@ ds_queue_enqueue(_queue, [_e[?"ip"], _e[?"port"], _buf, _size]);
 // (frame)
 var _buf = buffer_create(ggpo_game_state_base_size, buffer_grow, 1);
 ggpo_on_game_state_save(_buf, argument0);
-global.__ggpo_game_state_buffers[?int64(buffer_get_address(_buf))] = _buf;
-ggpo_do_game_state_save_3(_buf);
+if (ggpo_gml_is_js) {
+    // hacky: have to do manual memory management for WASM's copy
+    var _tell = buffer_tell(_buf);
+    var _wbuf = ggpo_gml_wasm_alloc(_tell, buffer_get_address(_buf));
+    var _args = ggpo_gml_prepare_buffer(16);
+    buffer_write(_args, buffer_u64, _wbuf);
+    buffer_write(_args, buffer_s32, buffer_get_size(_buf));
+    buffer_write(_args, buffer_s32, _tell);
+    global.__ggpo_game_state_buffers[?_wbuf] = _buf;
+    ggpo_do_game_state_save_3_raw(buffer_get_address(_args), 16);
+} else {
+    global.__ggpo_game_state_buffers[?int64(buffer_get_address(_buf))] = _buf;
+    ggpo_do_game_state_save_3(_buf);
+}
 
 #define ggpo_do_game_state_load_2
 // (addr, len)
 var _buf = global.__ggpo_game_state_buffers[?argument0];
-if (_buf == undefined) return false;
+if (_buf == undefined) {
+    show_debug_message("ggpo_do_game_state_load_2: no buffer for " + string(argument0));
+    return false;
+}
 buffer_seek(_buf, buffer_seek_start, 0);
 ggpo_on_game_state_load(_buf, argument1);
 return true;
@@ -145,9 +174,13 @@ return true;
 #define ggpo_do_game_state_dump_2
 // (addr, len)
 var _buf = global.__ggpo_game_state_buffers[?argument0];
-if (_buf == undefined) return false;
+if (_buf == undefined) {
+    show_debug_message("ggpo_do_game_state_dump_2: no buffer for " + string(argument0));
+    return false;
+}
 var _fb = global.__ggpo_fixed_buffer;
 buffer_seek(_fb, buffer_seek_start, 0);
+if (ggpo_gml_is_js) ggpo_gml_wasm_get_fixed_buffer();
 var _name = buffer_read(_fb, buffer_string);
 var _result = ggpo_on_game_state_dump(_buf, _name, argument1);
 return _result == undefined || _result;
@@ -155,7 +188,11 @@ return _result == undefined || _result;
 #define ggpo_do_game_state_free_2
 // (addr)
 var _buf = global.__ggpo_game_state_buffers[?argument0];
-if (_buf == undefined) return false;
+if (_buf == undefined) {
+    show_debug_message("ggpo_do_game_state_free_2: no buffer for " + string(argument0));
+    return false;
+}
+if (ggpo_gml_is_js) ggpo_gml_wasm_free(argument0);
 buffer_delete(_buf);
 ds_map_delete(global.__ggpo_game_state_buffers, argument0);
 return true;
@@ -171,6 +208,7 @@ ggpo_on_advance_frame()
 #define ggpo_do_event_2
 // ()
 var _fb = global.__ggpo_fixed_buffer;
+if (ggpo_gml_is_js) ggpo_gml_wasm_get_fixed_buffer();
 buffer_seek(_fb, buffer_seek_start, 0);
 var _code = buffer_read(_fb, buffer_s32);
 var _ev = { code: _code };
@@ -219,6 +257,7 @@ var _socket = argument0, _len = argument1;
 var _buf = ggpo_gml_prepare_buffer(_len);
 ggpo_do_network_send_packet_2(buffer_get_address(_buf), _len);
 var _args = global.__ggpo_fixed_buffer;
+if (ggpo_gml_is_js) ggpo_gml_wasm_get_fixed_buffer();
 buffer_seek(_args, buffer_seek_start, 0);
 var _url = ggpo_buffer_read_chars(_args, 64);
 var _port = buffer_read(_args, buffer_s32);
@@ -239,9 +278,14 @@ var _ip/*:string*/ = argument0, _port/*:int*/ = argument1, _buffer/*:buffer*/ = 
 if (global.__ggpo_do_network_receive_packet__active) {
     var _args = global.__ggpo_fixed_buffer;
     buffer_seek(_args, buffer_seek_start, 0);
-    buffer_write(_args, buffer_u64, int64(buffer_get_address(_buffer)));
+    if (ggpo_gml_is_js) {
+        buffer_write(_args, buffer_u64, ggpo_gml_wasm_alloc(_size, buffer_get_address(_buffer)));
+    } else {
+        buffer_write(_args, buffer_u64, int64(buffer_get_address(_buffer)));
+    }
     ggpo_buffer_write_chars(_args, _ip, 64);
     buffer_write(_args, buffer_s32, _port);
+    if (ggpo_gml_is_js) ggpo_gml_wasm_set_fixed_buffer();
     global.__ggpo_do_network_receive_packet__size = _size;
     return _size;
 } else show_error("ggpo_packet_received can only be called inside ggpo_on_network_receive_packet", 1);
@@ -291,3 +335,6 @@ var _pos = buffer_tell(_tmp);
 if (_pos < _len) buffer_fill(_tmp, _pos, buffer_u8, 0, _len - _pos);
 buffer_copy(_tmp, 0, _len, _buf, buffer_tell(_buf));
 buffer_seek(_buf, buffer_seek_relative, _len);
+
+#define gmcallback_ggpo_gml_script_execute
+return script_execute(argument0, argument1, argument2, argument3, argument4, argument5, argument6, argument7);
