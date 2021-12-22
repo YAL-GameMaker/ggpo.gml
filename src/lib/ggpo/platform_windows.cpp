@@ -33,3 +33,8 @@ bool Platform::GetConfigBool(const char* name)
    return atoi(buf) != 0 || _stricmp(buf, "true") == 0;
 }
 #endif
+
+void Platform::AssertFailed(char* msg) {
+   MessageBoxA(NULL, msg, "GGPO Assertion Failed", MB_OK | MB_ICONEXCLAMATION);
+   return;
+}
