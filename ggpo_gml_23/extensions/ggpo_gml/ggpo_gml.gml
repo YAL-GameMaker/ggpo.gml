@@ -5,6 +5,7 @@ global.__ggpo_script_execute_ptr = ptr(global.__ggpo_script_execute);
 global.__ggpo_script_execute_alt = method(undefined, script_execute);
 global.__ggpo_script_execute_alt_ptr = ptr(global.__ggpo_script_execute);
 global.__ggpo_fixed_buffer = buffer_create(1024, buffer_fixed, 1);
+buffer_set_used_size(global.__ggpo_fixed_buffer, buffer_get_size(global.__ggpo_fixed_buffer));
 switch (ggpo_preinit_1(global.__ggpo_script_execute_ptr, global.__ggpo_script_execute_alt_ptr)) {
     case 1:
         ggpo_preinit_2(global.__ggpo_fixed_buffer);
