@@ -10,4 +10,7 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <NXTargetName>Default</NXTargetName>
   </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <NXTargetName>Default</NXTargetName>
+  </PropertyGroup>
 </Project>
