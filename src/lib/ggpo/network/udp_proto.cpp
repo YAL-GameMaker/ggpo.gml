@@ -303,7 +303,7 @@ UdpProtocol::HandlesMsg(sockaddr_in &from,
       return false;
    }
    #ifdef GML_SOCKETS
-   return strncpy(_peer_addr.ip, from.ip, std::size(_peer_addr.ip)) &&
+   return strncmp(_peer_addr.ip, from.ip, std::size(_peer_addr.ip)) == 0 &&
           _peer_addr.port == from.port;
    #else
    return _peer_addr.sin_addr.S_un.S_addr == from.sin_addr.S_un.S_addr &&
